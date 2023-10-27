@@ -1,15 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Girassol|Noto+Sans|Slabo+27px&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap");
 /** fuentes */
 /** placeholders */
 .blog .title {
-  font-family: "Slabo 27px", "Noto Sans";
+  font-family: "Pacifico", cursive;
   font-weight: 800;
-  color: #f35383;
+  color: var(--third-color);
+  text-transform: capitalize;
 }
 
 .blog {
-  background-color: #eff1f3;
+  background-color: var(--bg-color-alt);
   max-width: unset;
   padding: 5% 10%;
   margin-top: 5rem;
@@ -25,13 +24,13 @@
   margin-bottom: 25px;
 }
 .blog .process-list .process > div > h3 {
-  color: #f35383;
+  color: var(--first-color);
   margin-bottom: 0;
   font-size: 1.5rem;
   font-weight: 800;
 }
 .blog .process-list .process > div > p {
-  color: #343a40;
+  color: var(--text-color);
   margin: 0;
 }
 .blog .process-list .process .process-icon {
@@ -50,9 +49,23 @@
   padding: 12px;
   width: 180px;
   margin-bottom: 15px;
-  border-color: #e8c571;
-  background-color: #f35383;
-  color: #f8f9fa;
+  border-color: var(--second-color);
+  background-color: var(--first-color);
+  color: var(--bg-color);
 }
 
+.col {
+  width: 80%;
+}
+
+@media (max-width:991px){
+  .row {
+    flex-direction: column;
+    padding: 0;
+  }
+  .col {
+    margin-bottom: 30px;
+    max-width: 80%;
+  }
+}
 /*# sourceMappingURL=action.css.map */

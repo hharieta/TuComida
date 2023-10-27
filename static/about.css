@@ -1,24 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Girassol|Noto+Sans|Slabo+27px&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap');
-
-:root {
-	--header-height: 4rem;
-
-	--first-color: #f35383;
-	--first-color-light: #fa92b1;
-
-	--second-color: #e8c571;
-	--second-color-light: #f5dca2;
-
-	--title-color: #212529;
-	--text-color: #343a40;
-	--text-color-light: #6c757d;
-
-	--bg-color: #f8f9fa;
-	--bg-color-alt: #eff1f3;
-
-	--color-white: #fff;
-}
 
 *,
 *::before,
@@ -31,23 +10,23 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	/* margin-top: var(--header-height); */
+/* body {
 	min-height: calc(100vh - var(--header-height));
 	color: var(--text-color);
 	display: grid;
 	grid-template-rows: 1fr auto;
 	background-color: var(--bg-color);
-	font-family: 'Fjalla One', sans-serif;
+	font-family: 'Nunito Sans', sans-serif;
 	font-size: 1rem;
-}
+} */
 
 h1{
     font-family: 'Pacifico', cursive;
+	color: var(--third-color);
 }
 h2,
 h3 {
-	font-family: 'Slabo 27px', serif;
+	font-family: "Nunito", sans-serif;
 	color: var(--title-color);
 }
 
@@ -118,17 +97,18 @@ ul {
 }
 
 .about__left h3 {
-	color: #fffbf7;
-    font-family: "Slabo 27px", "Noto Sans";
-    font-size: 3rem;
-    font-weight: 600;
+	color: var(--bg-color);
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+	text-transform: uppercase;
     margin-bottom: 3rem;
     text-align: center;
 }
 
 .about__left p {
-	color: #fffbf7;
-    font-family: "Noto Sans";
+	color: var(--bg-color);
+    font-family: "Nunito Sans", sans-serif;
     font-size: 1rem;
     text-align: left;
     margin-top: 1rem;
