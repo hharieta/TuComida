@@ -132,7 +132,7 @@ header {
     width: 100%;
 }
 
-.button-2 {
+button {
     background-color: rgba(239, 166, 81, 1);
     color: #fff;
     border: none;
@@ -155,13 +155,13 @@ header {
 /*.categoria a:hover {
     color: red; Cambia el color del texto al pasar el cursor
 }*/
-.restaurante .button-2:hover {
+.restaurante button:hover {
     background-color: #ff7700;
 }
-.search-bar .button-2:hover {
+.search-bar button:hover {
     background-color: rgb(255, 255, 255);
 }
-.search-bar .button-2:hover {
+.search-bar button:hover {
     color: rgba(239, 166, 81, 1);
 }
 .restaurante {
