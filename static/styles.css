@@ -248,7 +248,22 @@ ul {
 	display: inline-block;
 	margin: auto;
 	font-family: "Nunito Sans", sans-serif;
-	font-size: larger;
+	font-size: large;
+	font-weight: 700;
+	border-radius: 6px;
+	border-width: thick;
+	border-color: var(--title-color);
+	background-color: transparent(--second-color);
+	color: white;
+	text-transform: uppercase;
+}
+
+
+.bnt-menu {
+	display: inline-block;
+	margin: auto;
+	font-family: "Nunito Sans", sans-serif;
+	font-size: x-large;
 	font-weight: 700;
 	border-radius: 6px;
 	border-width: thick;
@@ -256,6 +271,7 @@ ul {
 	background-color: var(--second-color);
 	color: var(--text-color);
 	text-transform: uppercase;
+	padding: 12px 80px;
 }
 
 .btn-1:hover {
