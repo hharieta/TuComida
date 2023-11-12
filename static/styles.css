@@ -271,7 +271,7 @@ ul {
 	background-color: var(--second-color);
 	color: var(--text-color);
 	text-transform: uppercase;
-	padding: 12px 80px;
+	padding: 12px 20px;
 }
 
 .btn-1:hover {
