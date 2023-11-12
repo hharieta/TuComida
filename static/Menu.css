@@ -167,7 +167,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 35px;
-    justify-content: space-between; /* Distribuye los elementos en la fila */
+    justify-content: space-around;
 }
 
 .restaurante {
