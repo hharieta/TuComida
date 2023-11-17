@@ -154,7 +154,7 @@ ul {
 		to right,
 		rgba(0, 0, 0, 0.5),
 		rgba(0, 0, 0, 0.5)
-	   ),url('../assets/img/banner-min.jpeg');
+	   ),url('../img/banner-min.jpeg');
 	   background-attachment: fixed;
 }
 
@@ -456,14 +456,14 @@ ul {
 }
 
 .general-2 {
-    background-image: url(../assets/img/banner-min.jpeg);
+    background-image: url(../img/banner-min.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
 }
 .general-3 {
-    background-image: url(../assets/img/tarjeta.jpeg);
+    background-image: url(../img/tarjeta.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -766,9 +766,9 @@ ul {
 .footer .group-1 .box h2{
     color: var(--title-color);
     margin-bottom: 25px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    font-family: "Lato", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 .footer .group-1 .box p{
     color: var(--text-color);

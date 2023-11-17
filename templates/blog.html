@@ -1,0 +1,109 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/action.css') }}" />
+{% endblock %}
+
+{% block content %}
+  <body>
+    <main>
+      <section class="container blog">
+        <div class="row">
+          <div class="col">
+            <h2 class="title">Cualidades que nos definen</h2>
+            <article class="process-list">
+              <div class="process">
+                <div class="process-icon">
+                  <img src="{{url_for('static', filename='icons/icons8-3.png')}}" alt="Time icon" />
+                </div>
+                <div class="process-description">
+                  <h3>Cualidad 1</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <a>TuComida</a> Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="process">
+                <div class="process-icon">
+                  <img src="{{url_for('static', filename='icons/icons8-2.png')}}" alt="Free icon" />
+                </div>
+                <div class="process-description">
+                  <h3>Cualidad 2</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="process">
+                <div class="process-icon">
+                  <img src="{{url_for('static', filename='icons/icons8-1.png')}}" alt="Fresh icon" />
+                </div>
+                <div class="process-description">
+                  <h3>Cualidad 3</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+            </article>
+            <button>Saber más</button>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="{{url_for('static', filename='img/tarjeta.jpeg')}}"
+                class="card-img-top"
+                alt="Ecommerce Blogging: The 2020 Guide for Online Stores and DTC Brands"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  TuComida
+                </h5>
+                <p class="metadata">
+                  <strong class="category">TuComida Blogging </strong>
+                  <strong class="read-time">• 5 mins de lectura</strong>
+                </p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium temporibus illum quaerat nisi atque, quasi, error porro sunt provident, voluptatibus iste? Molestias quas incidunt quidem est accusantium vel veniam maiores.
+                  <span class="read-more">+ <a>Leer Más</a></span>
+                </p>
+                <div class="author">
+                  <img
+                    src="https://secure.gravatar.com/avatar/b1c37d9c6b3a36a5eb64d7112bf71ca4?s=96&d=retro&r=g"
+                    alt="Shauna Ward"
+                  />
+                  <p>Shauna Ward</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="{{url_for('static', filename='img/tarjeta.jpeg')}}"
+                class="card-img-top"
+                alt="What Is Licensed Content and How Does It Help Your Business Grow?"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  TuComida
+                </h5>
+                <p class="metadata">
+                  <strong class="category">TuComida Blogging </strong>
+                  <strong class="read-time">• 6 mins read</strong>
+                </p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed molestiae impedit rem, quos iusto magnam quia laborum, esse minima doloremque, corporis tempora aperiam! Neque laboriosam atque reprehenderit at beatae amet!
+                  <span class="read-more">+ <a>Leer Más</a></span>
+                </p>
+                <div class="author">
+                  <img
+                    src="https://secure.gravatar.com/avatar/c2f0381c76fae0875a4c15deb4e0a2f8?s=96&d=retro&r=g"
+                    alt="Rob Glover"
+                  />
+                  <p>Rob Glover</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+{% endblock %}

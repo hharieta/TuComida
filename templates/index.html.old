@@ -18,16 +18,16 @@
       crossorigin="anonymous"
     ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="assets/img/logo2.png" />
-    <link rel="stylesheet" href="static/styles.css" />
-    <link rel="stylesheet" href="static/cards.css" />
+    <link rel="icon" href="{{url_for('static', filename='img/logo2.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cards.css')}}" />
     <title>TuComida</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand logo" href="index.html">
-          <img src="assets/img/logo2.png" alt="TuComida" />
+        <a class="navbar-brand logo" href="{{url_for('index')}}">
+          <img src="{{url_for('static', filename='img/logo2.png')}}" alt="TuComida" />
         </a>
         <button
           class="navbar-toggler"
@@ -43,15 +43,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}"
                 >Inicio</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="menus.html">Restaurantes</a>
+              <a class="nav-link" href="{{url_for('menus')}}">Restaurantes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="filos.html">Filosofía</a>
+              <a class="nav-link" href="{{url_for('filos')}}">Filosofía</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -65,15 +65,15 @@
                 Conocenos
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="blog.html">Opiniones</a></li>
+                <li><a class="dropdown-item" href="{{url_for('blog')}}">Opiniones</a></li>
                 <li>
-                  <a class="dropdown-item" href="faq.html"
+                  <a class="dropdown-item" href="{{url_for('faq')}}"
                     >Preguntas frecuentes</a
                   >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="about.html"
+                  <a class="dropdown-item" href="{{url_for('about')}}"
                     >Acerca de nosotros</a
                   >
                 </li>
@@ -99,11 +99,11 @@
         <h1 class="banner-title">TuComida</h1>
         <p class="banner-description">Tú Come</p>
         <!--redireccionamiento menu-->
-        <a href="menus.html" class="bnt-menu">RESTAURANTES</a>
+        <a href="{{url_for('menus')}}" class="bnt-menu">RESTAURANTES</a>
 
 
 
-        <a href="contac.html" class="btn-1">Contáctanos</a>
+        <a href="{{url_for('contac')}}" class="btn-1">Contáctanos</a>
         <!-- <div class="banner-email">
                         <input type="email" name="email" id="email" class="banner-email-input" placeholder="Correo electrónico">
                         <button class="banner-email-btn">Enviar</button>
@@ -116,22 +116,22 @@
         <h2>Fácil y rápido</h2>
         <div class="services-group">
           <div class="services-1">
-            <img src="./assets/icons/search.svg" alt="search" />
+            <img src="{{url_for('static', filename='icons/search.svg')}}" alt="search" />
             <h3>Búsca locales</h3>
             <p>Encuentra lugares para comer y planifica tus salidas.</p>
           </div>
           <div class="services-1">
-            <img src="./assets/icons/filter.svg" alt="maps" />
+            <img src="{{url_for('static', filename='icons/filter.svg')}}" alt="maps" />
             <h3>Filtra resultados</h3>
             <p>Encuentra lo que quieras según tus preferencias.</p>
           </div>
           <div class="services-1">
-            <img src="./assets/icons/menu.svg" alt="menu" />
+            <img src="{{url_for('static', filename='icons/menu.svg')}}" alt="menu" />
             <h3>Visualiza menús</h3>
             <p>Mira los platillos en realidad aumentada</p>
           </div>
           <div class="services-1">
-            <img src="./assets/icons/map.svg" alt="maps" />
+            <img src="{{url_for('static', filename='icons/map.svg')}}" alt="maps" />
             <h3>Explora direcciones</h3>
             <p>Llega sin problemas a tu local favorito.</p>
           </div>
@@ -154,7 +154,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-          <img src="assets/img/IMG_0306.png" />
+          <img src="{{url_for('static', filename='img/IMG_0306.png')}}" />
         </div>
 
         <div class="explanatory-description">
@@ -186,7 +186,7 @@
           voluptatibus voluptatem consequuntur maxime praesentium 
           obcaecati sint vel. Eius odit perferendis quo fuga.
         </p>
-        <a href="contac.html" class="btn-1">Contáctanos</a>
+        <a href="./contac.html" class="btn-1">Contáctanos</a>
       </div>
       <div class="general-2"></div>
     </section>
@@ -199,7 +199,7 @@
           voluptatibus voluptatem consequuntur maxime praesentium 
           obcaecati sint vel. Eius odit perferendis quo fuga.
         </p>
-        <a href="contac.html" class="btn-1">Contáctanos</a>
+        <a href="./contac.html" class="btn-1">Contáctanos</a>
       </div>
     </section>
 
@@ -208,7 +208,7 @@
       <p>Lee las reseñas de los clientes</p>
       <div class="blog-content">
         <div class="blog-1">
-          <img src="./assets/img/eno.jpg" alt="eno">
+          <img src="{{url_for('static', filename='img/eno.jpg')}}" alt="eno">
           <h3>Eno</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Aut, atque cumque, iure impedit repellendus minus consequatur 
@@ -217,7 +217,7 @@
           </p>
         </div>
         <div class="blog-1">
-          <img src="./assets/img/darmir.jpg" alt="darmir">
+          <img src="{{url_for('static', filename='img/darmir.jpg')}}" alt="darmir">
           <h3>Fonda Darmir</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Aut, atque cumque, iure impedit repellendus minus consequatur 
@@ -226,7 +226,7 @@
           </p>
         </div>
         <div class="blog-1">
-          <img src="./assets/img/taquiza.jpg" alt="taquiza">
+          <img src="{{url_for('static', filename='img/taquiza.jpg')}}" alt="taquiza">
           <h3>La Taquiza</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Aut, atque cumque, iure impedit repellendus minus consequatur 
@@ -235,7 +235,7 @@
           </p>
         </div>
       </div>
-      <a href="contac.html" class="btn-1">Información</a>
+      <a href="./contac.html" class="btn-1">Información</a>
     </section>
 
     <section class="experiences">
@@ -260,44 +260,44 @@
             <img
               class="brand"
               height="50px"
-              src="./assets/img/carls_brand.svg"
+              src="{{url_for('static', filename='img/carls_brand.svg')}}"
               alt="soy una marca"
             />
             <img
               class="brand"
               height="100px"
-              src="./assets/img/Dominos_brand.svg"
+              src="{{url_for('static', filename='img/Dominos_brand.svg')}}"
               alt="soy una marca"
             />
             <img
               class="brand"
               height="100px"
-              src="./assets/img/zancudo_brand.png"
+              src="{{url_for('static', filename='img/zancudo_brand.png')}}"
               alt="soy una marca"
             />
             <img
               class="brand"
               height="50px"
-              src="./assets/img/taqueria_brand.png"
+              src="{{url_for('static', filename='img/taqueria_brand.png')}}"
               alt="soy una marca"
             />
 
             <img
               class="brand"
               height="100px"
-              src="./assets/img/congracia_brand.png"
+              src="{{url_for('static', filename='img/congracia_brand.png')}}"
               alt="soy una marca"
             />
             <img
               class="brand"
               height="100px"
-              src="./assets/img/werito_brand.png"
+              src="a{{url_for('static', filename='img/werito_brand.png')}}"
               alt="soy una marca"
             />
             <img
               class="brand"
               height="100px"
-              src="./assets/img/pescaditos_brand.JPG"
+              src="{{url_for('static', filename='img/pescaditos_brand.JPG')}}"
               alt="soy una marca"
             />
           </div>
@@ -319,7 +319,7 @@
             <div class="slide-cards">
               <label class="card fadeIn animated" for="item-1" id="selector-1">
                 <div class="card-cover-image">
-                  <img class="img-fluid" src="assets/img/tarjeta.jpeg" alt="" />
+                  <img class="img-fluid" src="{{url_for('static', filename='img/tarjeta.jpeg')}}" alt="" />
                   <div class="logo"><p>TuComida</p></div>
                 </div>
                 <div class="card-content">
@@ -361,7 +361,7 @@
                 <div class="card-cover-image">
                   <img
                     class="img-fluid"
-                    src="./assets/img/cupon-1.jpg"
+                    src="{{url_for('static', filename='img/cupon-1.jpg')}}"
                     alt=""
                   />
                   <div class="logo"><p>TuComida</p></div>
@@ -404,7 +404,7 @@
                 <div class="card-cover-image">
                   <img
                     class="img-fluid"
-                    src="./assets/img/tarjeta.jpeg"
+                    src="{{url_for('static', filename='img/tarjeta.jpeg')}}"
                     alt=""
                   />
                   <div class="logo"><p>TuComida</p></div>
@@ -437,7 +437,7 @@
                 </div>
                 <div class="card-footer">
                   <button
-                    onclick="window.location.href='contac.html';"
+                    onclick="window.location.href='./contac.html';"
                     class="btn btn-primary expanded"
                   >
                     Enviar Mensaje
@@ -458,22 +458,22 @@
               target="_blank"
               rel="noreferrer noopener"
             >
-              <img src="./assets/img/logo2.png" alt="TuComida" />
+              <img src="{{url_for('static', filename='img/logo2.png')}}" alt="TuComida" />
             </a>
           </figure>
         </div>
         <div class="box">
           <h2>SOBRE NOSOTROS</h2>
-          <a href="about.html" class="textlink">
+          <a href="{{url_for('about')}}" class="textlink">
             <p>¿Quiénes somos?</p>
           </a>
-          <a href="filos.html" class="textlink">
+          <a href="{{url_for('filos')}}" class="textlink">
             <p>Nuestra misión</p>
           </a>
-          <a href="faq.html" class="textlink">
+          <a href="{{url_for('faq')}}" class="textlink">
             <p>Preguntas frecuentes</p>
           </a>
-          <a href="contac.html" class="textlink">
+          <a href="{{url_for('contac')}}" class="textlink">
             <p>Contáctanos</p>
           </a>
         </div>
