@@ -471,8 +471,9 @@ ul {
 }
 
 .general-1 h2 {
-    font-size: 55px;
+    font-size: 3rem;
     font-weight: 600;
+	font-family: 'Nunito Sans', sans-serif;
     line-height: 70px;
     color: var(--text-color);
     text-transform: uppercase;
