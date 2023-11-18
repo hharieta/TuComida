@@ -10,7 +10,8 @@
 	--second-color: rgb(247,220,183);
 	--second-color-light: rgb(248,228,187);
 
-	--third-color: rgba(28, 133, 127);
+	--third-color: rgb(33, 37, 41);
+	--third-color-sm: rgb(33, 37, 41, 0.8);
 
 	--title-color: #212529;
 	--text-color: #343a40;

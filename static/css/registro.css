@@ -4,26 +4,28 @@
     margin: auto;
     width: 100%; /* Ancho del formulario, ajusta según tus necesidades */
     margin-top: 50px; /* Margen superior para centrar verticalmente */
-    border-radius: 10px; /* Bordes redondeados */
-	color: white;
+    border-radius: 10px; 
+	color: var(--bg-color);
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .banner-container {
-	background-color: #333;
+	background-color: var(--third-color-sm);
     padding: 50px;
-    border-radius: 10px; /* Bordes redondeados */
-	color: white;
+    border-radius: 10px;
+	color: var(--bg-color);
+    /* border-radius: 20px; */
 }
 
 .banner-container h2 {
-    color: #fff; /* Color de texto blanco */
+    color: var(--bg-color); /* Color de texto blanco */
     text-align: center; /* Centrar el texto */
     text-transform: uppercase; /* Convertir texto a mayúsculas */
 }
 
 .form-group {
     margin-bottom: 15px;
+    border-radius: 20px #555;
 }
 
 label {
@@ -45,8 +47,8 @@ select {
 }
 
 button {
-    background-color: #4caf50; /* Color de fondo del botón */
-    color: white;
+    background-color: var(--first-color); /* Color de fondo del botón */
+    color: var(--bg-color-alt);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -54,5 +56,45 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Cambia el color cuando se pasa el ratón sobre el botón */
+    background-color: var(--first-color-light); /* Cambia el color cuando se pasa el ratón sobre el botón */
+}
+
+/* iniciar sesion */
+
+.login-container {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: var(--bg-color-alt);
+    padding: 20px;
+    background-color: var(--third-color-sm);
+}
+
+.login-container h2 {
+    color: var(--bg-color-alt);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
+    .banner-container {
+        width: 90%;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .login-container {
+        width: 30%;
+    }
+    .banner-container {
+        width: 30%;
+    }
 }

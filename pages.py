@@ -7,6 +7,14 @@ pages_bp = Blueprint('pages', __name__, template_folder='templates', static_fold
 def index():
     return render_template('index.html')
 
+@pages_bp.route('/login')
+def login():
+    return render_template('login.html')
+
+@pages_bp.route('/register')
+def register():
+    return render_template('register.html')
+
 @pages_bp.route('/menus')
 def menus():
     return render_template('menus.html')
@@ -38,3 +46,7 @@ def filos():
 @pages_bp.route('/registro')
 def registro():
     return render_template('registro.html')
+
+@pages_bp.route('/40x')
+def err_404(error):
+    return render_template('40x.html')
