@@ -1,0 +1,139 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/faq.css')}}" />
+
+{% endblock %}
+{% block content %}
+    <body>
+        <main class="header">
+            <article>
+              <h1>TuComida FAQs</h1>
+            </article>
+            <!-- according -->
+            <section class="faq">
+              <div class="container">
+                <div class="row">
+                  <!-- first column -->
+                  <div class="col">
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Pregunta 1?
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis distinctio cumque ad laudantium id quia dolorem aliquam sint. Officiis possimus nobis quasi dolorem eaque vero magnam adipisci blanditiis asperiores eveniet.
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Pregunta 2?
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti natus ipsum tempore velit, quae nemo, laudantium quibusdam reprehenderit magni qui dolorem odio cumque aliquid tenetur in eaque consequatur rerum vel!
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Pregunta 3?
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quae pariatur impedit harum dicta animi similique eligendi a natus fugiat sapiente nihil quaerat, consequuntur nemo quos voluptatum sed quasi ad.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- second column -->
+                  <div class="col">
+                    <div class="accordion" id="segundaColumna">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            ¿Pregunta 4?
+                          </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#segundaColumna">
+                          <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate numquam, illum voluptatem quis eius, est quod reprehenderit laborum animi eveniet culpa quas saepe adipisci ipsam modi pariatur omnis delectus explicabo.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                            ¿Pregunta 5?
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#segundaColumna">
+                          <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam magnam, in consectetur reprehenderit at sequi aspernatur ea odio saepe rem ducimus reiciendis soluta dignissimos excepturi obcaecati cum adipisci modi possimus!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            ¿Pregunta 6?
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#segundaColumna">
+                          <div class="accordion-body">
+                            <a href="{{url_for('pages.contac')}}">¡Contáctanos</a>! estaremos contantados de atenderte.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- button group Bootstrap -->
+            <div class="platforms">
+              <h5>TUCOMIDA IS POWERED BY</h5>
+              <div class="btn-group" role="group" aria-label="TecNM">
+                <button type="button" class="btn btn-secondary">
+                  <img src="{{url_for('static', filename='icons/tecnmicono.ico')}}" width="20" height="21" alt="TecNM logo"> <!--TecNM-->
+                  <a href="https://www.tecnm.mx/" target="_blank" rel="noreferrer noopener">TecNM</a>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <img src="{{url_for('static', filename='icons/Innova_TecNM_2023_logo.png')}}" width="30" height="21" alt="Innovatec"> <!-- Innovatec-->
+                  <a href="https://innova.tecnm.mx/documentos/Convocatoria-InnovaTecNM-fd97d.pdf" target="_blank" rel="noreferrer noopener">Innovatec</a>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <img src="{{url_for('static', filename='icons/itc.svg')}}" width="20" height="21" alt="ItCancún icon"> <!--ITCancún-->
+                  <a href="https://www.cancun.tecnm.mx/" target="_blank" rel="noreferrer noopener">ITCancún</a>
+                </button>
+                <!-- <button type="button" class="btn btn-secondary">Other</button> -->
+              </div>
+            </div>
+          </main>
+    </body>
+ {% endblock %}   

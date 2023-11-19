@@ -1,0 +1,28 @@
+
+{% extends './base.html' %}
+
+{% block title %}TuComida - Opps!{{ super() }}{% endblock %}
+
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/errors.css') }}" />
+{% endblock %}
+
+{% block content %}
+  <body>
+    <section class="error">
+        <div class="error__container">
+          <div class="error__left">
+            <h2>404</h2>
+            <h3>Opps! No encontramos lo que buscas</h3>
+            <p>La página que buscas no existe o no está disponible</p>
+            <a href="{{url_for('pages.index')}}" class="btn">Volver al inicio</a>
+          </div>  
+          <di class="error__right">
+            <img
+            src="{{url_for('static', filename='img/loading.JPG')}}" alt="Opps!"
+            > 
+          </di>    
+    </section>
+    </body>
+{% endblock %}
