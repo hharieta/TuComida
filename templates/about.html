@@ -1,0 +1,80 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}" />
+
+{% endblock %}
+{% block content %}
+    <body>
+        <main>
+          <section>
+            <h1 style="margin-top: 10rem; margin-bottom: 10rem; text-align: center;">¿Quiénes Somos?</h1>
+            <!-- <div class="grid-gallery">
+              <a class="grid-gallery__item" href="#">
+                  <img class="grid-gallery__image" src="{{url_for('static', filename='img/werito_brand.png')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                  <img class="grid-gallery__image" src="{{url_for('static', filename='img/taquiza.jpg')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/macdonalds_brand.jpg')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/pescaditos_brand.JPG')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/spresso_brand.jpg')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/taqueria_brand.png')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/samta_brand.png')}}">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="{{url_for('static', filename='img/zancudo_brand.png')}}">
+              </a> -->
+              <!-- <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/card-header.png">
+              </a> -->
+              <!-- <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/1_1.png">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/blog_cena.jpg">
+              </a> -->
+              <!-- <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/card-header.png">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/card-header.png">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/card-header.png">
+              </a>
+              <a class="grid-gallery__item" href="#">
+                <img class="grid-gallery__image" src="assets/img/card-header.png">
+              </a> -->
+            <!-- </div> -->
+          </section>
+          <section class="about">
+            <div class="about__container">
+              <article class="about__left">
+                <h3>Somos TuComida</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, magni adipisci. Voluptatum, ut? Dicta tenetur, porro odit quos rem magni neque quasi quaerat saepe quis quas alias, illum, illo perferendis.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit pariatur sit eos velit architecto molestias alias temporibus vitae enim quidem debitis repudiandae animi nisi officiis, provident in, recusandae dicta? Unde.
+                  <i>importancia de preservar las tradiciones familiares y compartir el amor a través de la comida.</i>
+                </p>
+              </article>
+              <article class="about__rigth">
+                <img src="{{url_for('static', filename='img/logo2.png')}}">
+              </article>
+            </div>
+          </section>
+        </main>
+    </body>
+{% endblock %}

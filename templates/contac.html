@@ -1,0 +1,38 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/contac.css')}}" />
+{% endblock %}
+
+{% block content %}
+  <body>
+    <main class="header">
+      <section>
+        <div>
+          <form class="forms" action="https://formsubmit.co/contacto@lasalsona.com" method="POST">
+                <h2  style="text-align: center;">Contacto</h2>
+                <div class="input__group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Nombre">
+                    <label for="phone">Telefono</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Telefono">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email">
+                    <label for="message">Mensaje</label>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
+                    <div class="form__txt">
+                        <a href="#">Política de privacidad</a>
+                        <a href="#">Terminos y condiciones</a>
+                    </div>
+                    <input class="form__btn" type="submit" value="Enviar">
+                    <input type="hidden" name="_subject" value="contacto">
+                    <input type="hidden" type="_next" value="lasalsona.com">
+                </div>
+          </form>
+        </div>
+    </section>
+    </main>
+  </body>
+{% endblock %}
