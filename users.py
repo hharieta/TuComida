@@ -2,7 +2,7 @@ from flask import abort, make_response
 from config import db
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
-from models.User import User, users_schema, user_schema
+from models import User, users_schema, user_schema
 
 #####################################################
 #
@@ -18,14 +18,14 @@ def read_all():
 
 
 # read a specific user from de data base
-def read_one(control_number):
-    user = User.query.filter(User.control_number == control_number).one_or_none()
+def read_one(email):
+    user = User.query.filter(User.control_number == email).one_or_none()
 
     if user is not None:
         return user_schema.dump(user)
     else:
         abort(
-            404, f"User with control number {control_number} not found"
+            404, f"User with control number {email} not found"
         )
 
 
