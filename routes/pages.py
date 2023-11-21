@@ -1,15 +1,42 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
+from flask_login import LoginManager, login_user, logout_user, login_required
+from flask_wtf.csrf import CSRFProtect
+from models import User
+from services import CheckLogin, UserLogin
+import config
+import logging
 
 pages_bp = Blueprint('pages', __name__, template_folder='templates', static_folder='static')
 
+
+app = config.connex_app
+app.add_api(config.base_dir / 'api.yml')
+csrf = CSRFProtect(app.app)
+
+login_manager = LoginManager(app.app)
+
+@login_manager.user_loader
+def load_user(email):
+    return UserLogin.get_user_by_email(email)
 
 @pages_bp.route('/')
 def index():
     return render_template('index.html')
 
-@pages_bp.route('/login')
+@pages_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    if request.method == 'POST':
+        user = CheckLogin(request.form['email'], request.form['password'])
+        logged_user = UserLogin.login(user)
+
+        if logged_user:
+            login_user(logged_user)
+            return redirect(url_for('pages.index'))
+        else:
+            flash('Usuario o contraseña incorrectos')
+            return redirect(url_for('pages.login'))
+    else:
+        return render_template('login.html')
 
 @pages_bp.route('/register')
 def register():

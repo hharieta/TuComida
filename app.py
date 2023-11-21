@@ -1,4 +1,5 @@
 from flask import Flask
+from config import db
 from routes import pages_bp, errors_bp
 
 app = Flask(__name__)

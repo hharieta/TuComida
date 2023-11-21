@@ -19,7 +19,7 @@ def read_all():
 
 # read a specific user from de data base
 def read_one(email):
-    user = User.query.filter(User.control_number == email).one_or_none()
+    user = User.query.filter(User.email == email).one_or_none()
 
     if user is not None:
         return user_schema.dump(user)

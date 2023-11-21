@@ -3,7 +3,7 @@ import connexion
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import secrets
-from envars import get_envars
+from .envars import vars
 
 # creates the variable basedir pointing 
 # to the directory that the program is running in.
@@ -15,8 +15,18 @@ connex_app = connexion.App(__name__, specification_dir=base_dir)
 # creates a variable, app,
 # which is the Flask instance initialized by Connexion
 app = connex_app.app
+
+
+USERNAME = vars['POSTGRES_USERNAME']
+PASSWORD = vars['POSTGRES_PASSWORD']
+HOST = vars['POSTGRES_HOST']
+PORT = vars['POSTGRES_PORT']
+DBNAME = vars['POSTGRES_DBNAME']
+
+
+
 # tell SQLAlchemy to use SQLite as the database
-app.config["SQLALCHEMY_DATABASE_URI"] = f"postgres://{get_envars['POSTGRES_USERNAME']}:{get_envars['POSTGRES_PASSWORD']}@{get_envars['POSTGRES_HOST']}:{get_envars['POSTGRES_PORT']}/{get_envars['POSTGRES_DBNAME']}"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
 
 # turns the SQLAlchemy event system off. The event system 
 # generates events that are useful in event-driven programs, 
@@ -35,3 +45,5 @@ db = SQLAlchemy(app)
 # nitializes Marshmallow and allows it 
 # to work with the SQLAlchemy components attached to the app.
 ma = Marshmallow(app)
+
+db.init_app(app)

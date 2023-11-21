@@ -1,5 +1,5 @@
 from marshmallow_sqlalchemy import fields
-from ..config import db, ma
+from config import db, ma
 
 class User(db.Model):
     __tablename__ = "users"
