@@ -1,19 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from flask_login import LoginManager, login_user, logout_user, login_required
-from flask_wtf.csrf import CSRFProtect
 from models import User
+from config import connex_app
 from services import CheckLogin, UserLogin
-import config
 import logging
 
 pages_bp = Blueprint('pages', __name__, template_folder='templates', static_folder='static')
 
 
-app = config.connex_app
-app.add_api(config.base_dir / 'api.yml')
-csrf = CSRFProtect(app.app)
-
-login_manager = LoginManager(app.app)
+login_manager = LoginManager(connex_app.app)
 
 @login_manager.user_loader
 def load_user(email):

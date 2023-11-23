@@ -8,13 +8,14 @@ from .envars import vars
 # creates the variable basedir pointing 
 # to the directory that the program is running in.
 base_dir = pathlib.Path(__file__).parent.resolve()
+print("BASE DIR: ", base_dir)
 # uses the basedir variable to create the Connexion app 
 # instance and give it the path to the directory 
 # that contains your specification file.
 connex_app = connexion.App(__name__, specification_dir=base_dir)
 # creates a variable, app,
 # which is the Flask instance initialized by Connexion
-app = connex_app.app
+app =connex_app.app
 
 
 USERNAME = vars['POSTGRES_USERNAME']
@@ -45,5 +46,3 @@ db = SQLAlchemy(app)
 # nitializes Marshmallow and allows it 
 # to work with the SQLAlchemy components attached to the app.
 ma = Marshmallow(app)
-
-db.init_app(app)
