@@ -1,11 +1,10 @@
-from flask import Flask
 from flask_wtf.csrf import CSRFProtect
-from routes import pages_bp, errors_bp
-from config import connex_app, base_dir
+from pages import pages_bp
+from errors import errors_bp
+from config import connex_app
 
 app = connex_app.app
-connex_app.add_api(base_dir / 'api.yml')
-csrf = CSRFProtect()
+csrf = CSRFProtect(app)
 
 app.register_blueprint(pages_bp,  url_prefix='/')
 app.register_blueprint(errors_bp, url_prefix='/')

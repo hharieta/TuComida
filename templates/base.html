@@ -23,6 +23,15 @@
     {% block customCSS %}
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+    {% endwith %}
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">

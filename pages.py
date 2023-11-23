@@ -24,14 +24,20 @@ def login():
         user = CheckLogin(request.form['email'], request.form['password'])
         logged_user = UserLogin.login(user)
 
-        if logged_user:
-            login_user(logged_user)
+        if logged_user is not None:
+            login_user(logged_user) 
+            flash("Login successful")
             return redirect(url_for('pages.index'))
         else:
-            flash('Usuario o contraseña incorrectos')
-            return redirect(url_for('pages.login'))
-    else:
-        return render_template('login.html')
+            flash("Invalid email or password")
+            return render_template('login.html')
+
+    return render_template('login.html')
+
+@pages_bp.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 @pages_bp.route('/register')
 def register():
@@ -69,6 +75,6 @@ def filos():
 def registro():
     return render_template('registro.html')
 
-@pages_bp.route('/40x')
+@pages_bp.route('/400')
 def err_404(error):
-    return render_template('40x.html')
+    return render_template('404.html')

@@ -80,7 +80,8 @@ class CheckLogin(UserMixin):
         self.email = email
         self.password = password
     
-
+    def get_id(self):
+        return str(self.email) 
      # comprobación de password
     # password en la BBDD se guarda en formato hash
     @classmethod   # método de clase para evitar instanciar
@@ -105,7 +106,7 @@ class UserLogin():
             raise Exception(e)
     
     @classmethod
-    def get_user_by_email(email):
+    def get_user_by_email(self, email):
         try:
             exist_user = User.query.filter(User.email == email).one_or_none()
 
