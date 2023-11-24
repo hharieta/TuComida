@@ -71,6 +71,10 @@ def about():
 def filos():
     return render_template('filos.html')
 
+@pages_bp.route('/ofertas')
+def ofertas():
+    return render_template('ofertas.html')
+
 @pages_bp.route('/registro')
 def registro():
     return render_template('registro.html')
