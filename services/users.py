@@ -90,7 +90,8 @@ class CheckLogin(UserMixin):
 
     @classmethod
     def gener_password_hash(password):
-        print(generate_password_hash(password))
+        # print(generate_password_hash(password))
+        return generate_password_hash(password)
 
 
 class UserLogin():
@@ -99,9 +100,8 @@ class UserLogin():
     def login(self, user):
         try:
             exist_user = User.query.filter(User.email == user.email).one_or_none()
-            if exist_user is not None:
-                is_user = CheckLogin(exist_user.email, CheckLogin.check_password(exist_user.password, user.password))
-                return is_user
+            if exist_user is not None and CheckLogin().check_password(exist_user.password, user.password):
+                return CheckLogin(exist_user.email, None)
         except Exception as e:
             raise Exception(e)
     
