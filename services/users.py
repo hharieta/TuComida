@@ -85,11 +85,11 @@ class CheckLogin(UserMixin):
      # comprobación de password
     # password en la BBDD se guarda en formato hash
     @classmethod   # método de clase para evitar instanciar
-    def check_password(self, hashed_password, password):
+    def check_password(cls, hashed_password, password):
         return check_password_hash(hashed_password, password)
 
     @classmethod
-    def gener_password_hash(password):
+    def gener_password_hash(cls, password):
         # print(generate_password_hash(password))
         return generate_password_hash(password)
 
@@ -97,10 +97,10 @@ class CheckLogin(UserMixin):
 class UserLogin():
     
     @classmethod
-    def login(self, user):
+    def login(cls, user):
         try:
             exist_user = User.query.filter(User.email == user.email).one_or_none()
-            if exist_user is not None and CheckLogin(exist_user.email, exist_user.password).check_password(exist_user.password, user.password):
+            if exist_user is not None and CheckLogin.check_password(exist_user.password, user.password):
                 return CheckLogin(exist_user.email, exist_user.password)
         except Exception as e:
             raise Exception(e)
@@ -111,7 +111,7 @@ class UserLogin():
             exist_user = User.query.filter(User.email == email).one_or_none()
 
             if exist_user is not None:
-                return CheckLogin(exist_user.email, None)
+                return CheckLogin(exist_user.email, exist_user.password)
             else:
                 return None
         except Exception as e:
