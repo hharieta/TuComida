@@ -22,7 +22,9 @@ def index():
 def login():
     if request.method == 'POST':
         user = CheckLogin(request.form['email'], request.form['password'])
+        print(f"User: {user.email}, Password: {user.password}")
         logged_user = UserLogin.login(user)
+        print(f"Logged User: {logged_user}")
 
         if logged_user is not None:
             login_user(logged_user) 
