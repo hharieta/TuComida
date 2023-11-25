@@ -25,7 +25,7 @@ def read_one(email):
         return user_schema.dump(user)
     else:
         abort(
-            404, f"User with control number {email} not found"
+            404, f"User with email {email} not found"
         )
 
 
@@ -48,7 +48,7 @@ def create(user):
 
 # User attributes that can be updated in the database
 def update(email, user):
-    existing_user = User.query.filter(User.control_number == email).one_or_none()
+    existing_user = User.query.filter(User.email == email).one_or_none()
 
     if existing_user:
         update_user = user_schema.load(user, session=db.session)
@@ -90,7 +90,8 @@ class CheckLogin(UserMixin):
 
     @classmethod
     def gener_password_hash(password):
-        print(generate_password_hash(password))
+        # print(generate_password_hash(password))
+        return generate_password_hash(password)
 
 
 class UserLogin():
@@ -99,9 +100,8 @@ class UserLogin():
     def login(self, user):
         try:
             exist_user = User.query.filter(User.email == user.email).one_or_none()
-            if exist_user is not None:
-                is_user = CheckLogin(exist_user.email, CheckLogin.check_password(exist_user.password, user.password))
-                return is_user
+            if exist_user is not None and CheckLogin(exist_user.email, exist_user.password).check_password(exist_user.password, user.password):
+                return CheckLogin(exist_user.email, exist_user.password)
         except Exception as e:
             raise Exception(e)
     
