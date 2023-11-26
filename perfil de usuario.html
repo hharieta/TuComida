@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>tu comida</title>
+</head>
+<body>
+
+    <header>
+        <nav class="barra-navegacion">
+            <div class="logo">
+                <a href="#">TuComida</a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Restaurantes</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Promociones</a></li>
+                <li><a href="#">Lo Nuevo</a></li>
+                <li><a href="#">Iniciar Sesión</a></li>
+                <li><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        
+      body {
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCGnMZWyACKfK9KaRP7rmWPOhNQochb0WHXg&usqp=CAU');
+          background-size: contain; /* Ajusta el tamaño de la imagen */
+          height: 300px; /* Establece la altura del contenedor */
+          background-color: #f19f05; /* Fondo de color naranja */
+          font-family: Arial, sans-serif;
+          text-align: center;
+      }
+
+      #user-data {
+          max-width: 400px;
+          margin: 50px auto;
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+      }
+
+      button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: #45a049;
+      }
+  </style>
+</head>
+<body>
+
+  <div id="user-data">
+      <h2>Perfil del usuario</h2>
+      <form id="edit-form">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" value="Usuario Ejemplo" disabled>
+          <br>
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" value="usuario@example.com" disabled>
+          <br>
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" value="contrasena123" disabled>
+          <br>
+          <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+          <input type="password" id="confirmar-contrasena" value="contrasena123" disabled>
+          <br>
+          <label for="permitir-ubicacion">
+              <input type="checkbox" id="permitir-ubicacion" disabled checked> Permitir acceso a ubicación
+          </label>
+          <br>
+          <button type="button" onclick="editar()">editar</button>
+          <button type="button" onclick="guardarcambios()">guardar Cambios</button>
+      </form>
+  </div>
+
+  <script>
+      function editarContraseña() {
+          // Habilitar la edición de contraseñas
+          document.getElementById('contrasena').disabled = false;
+          document.getElementById('confirmar-contrasena').disabled = false;
+      }
+
+      function guardarCambios() {
+          // Obtener los nuevos valores
+          var nuevaContrasena = document.getElementById('contrasena').value;
+          var confirmarNuevaContrasena = document.getElementById('confirmar-contrasena').value;
+
+          // Validar que las contraseñas coincidan
+          if (nuevaContrasena !== confirmarNuevaContrasena) {
+              alert('Las contraseñas no coinciden');
+              return;
+          }
+
+          // Aquí puedes enviar los datos actualizados al servidor o hacer otras operaciones según tus necesidades
+
+          // Deshabilitar la edición después de guardar cambios
+          document.getElementById('contrasena').disabled = true;
+          document.getElementById('confirmar-contrasena').disabled = true;
+
+          // Mensaje de éxito (puedes adaptarlo a tus necesidades)
+          alert('Cambios guardados correctamente');
+      }
+  </script>
+
+
+
+</body>
+</html>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #b49864; /* Naranja */
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: white;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #fff; /* Cambiar el color al pasar el ratón */
+}
+
+</style>
