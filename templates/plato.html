@@ -1,0 +1,167 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/plato.css')}}" />
+
+{% endblock %}
+{% block content %}
+<body>
+    <br><br><br>
+    <div class="restaurant-profile">
+        <div class="cover-photo">
+            <img src="https://elceo.com/wp-content/uploads/2023/08/%C2%BFQuien-es-el-dueno-de-Burger-King-.jpg" alt="Portada del restaurante">
+            <div class="profile-photo">
+                <img src="https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png" alt="Foto de perfil del restaurante">
+            </div>
+        </div>
+        <h3>Burger King Nichúpte</h3>
+        <br>
+    <div class="container">
+        <div class="dish-container">
+            <div class="dish-image">
+                <img src="https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_WHOPPER_500X540px.png" alt="Whopper">
+            </div>
+            <div class="dish-details">
+                <div class="dish-title">Whopper</div>
+                <div class="dish-description">Comienza con un suculento filete de carne de res de primera calidad, cuidadosamente sazonado con una mezcla de especias secretas que realzan su sabor natural y lo elevan a la perfección.</div>
+                <div class="dish-price-container">
+                    <div class="dish-price">$129.99</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Calificaciones</h2>
+        <br>
+        <div class="comments-section">
+            <div class="comment-impar">
+                <div class="user-info" id="user-info">Carlos Juárez</div>
+                <div class="comment-text">¡Increíble sabor y presentación! Definitivamente, volveré por más.</div>
+                <div class="rating">Calificación: 5/5</div>
+            </div>
+
+            <div class="comment-par">
+                <div class="user-info" id="user-info">Pedro Férnandez Zuñiga</div>
+                <div class="comment-text">Me encantó la textura y la combinación de sabores. Altamente recomendado.</div>
+                <div class="rating">Calificación: 4/5</div>
+            </div>
+
+            <div class="comment-impar">
+                <div class="user-info" id="user-info">Paquita López</div>
+                <div class="comment-text">He probado muchas hamburguesas, pero esta es muy buena.</div>
+                <div class="rating">Calificación: 5/5</div>
+            </div>
+
+            <div class="comment-par">
+                <div class="user-info" id="user-info">Juan Rodríguez</div>
+                <div class="comment-text">Pésima. Cuando la vi, no se parecía en nada a los anuncios que había visto, es muy pequeña, muy cara y aparte la carne estaba muy fria y la lechuga ya no estaba en buen estado.</div>
+                <div class="rating">Calificación: 1/5</div>
+            </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+            <!-- Formulario para dejar un comentario y calificación -->
+            <div class="comment-form-container" id="comment-form">
+                <h3>Deja tu calificacion</h3>
+                <!-- <form id="user-form">
+                    <label for="username">Nombre de Usuario:</label>
+                    <input type="text" id="username" name="username" required> -->
+
+                    <label for="comment">Comentario:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                    <br>
+                    <label for="rating">Calificación:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">5 - Excelente</option>
+                        <option value="4">4 - Muy Bueno</option>
+                        <option value="3">3 - Bueno</option>
+                        <option value="2">2 - Regular</option>
+                        <option value="1">1 - Malo</option>
+                    </select>
+<br>
+                    <button type="button" onclick="checkAuthentication()">Enviar</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Simulación de usuario autenticado
+var currentUser = null;
+
+function checkAuthentication() {
+    // Obtener el nombre de usuario ingresado
+    var enteredUsername = document.getElementById("username").value;
+
+    // Simulación de autenticación (deberías implementar esto en el servidor)
+    if (currentUser && currentUser.username === enteredUsername) {
+        // El usuario ya está autenticado, puede dejar un comentario
+        submitComment();
+    } else {
+        // Redirigir al usuario a la página de registro (simulado)
+        window.location.href = "https://www.registro.com";
+    }
+}
+
+function submitComment() {
+    // Simulación de envío del comentario (deberías implementar esto en el servidor)
+    var comment = document.getElementById("comment").value;
+    var rating = document.getElementById("rating").value;
+
+    // Aquí deberías enviar esta información al servidor para su procesamiento y almacenamiento
+    console.log("Usuario: " + currentUser.username);
+    console.log("Comentario: " + comment);
+    console.log("Calificación: " + rating);
+
+    // Agregar el comentario al DOM
+    addCommentToDOM(currentUser.username, comment, rating);
+
+    // Limpiar el formulario
+    document.getElementById("username").value = "";
+    document.getElementById("comment").value = "";
+    document.getElementById("rating").value = "5";
+}
+
+function addCommentToDOM(username, comment, rating) {
+    var commentsSection = document.querySelector(".comments-section");
+
+    // Crear elementos del comentario
+    var commentContainer = document.createElement("div");
+    commentContainer.classList.add("comment");
+
+    var userInfo = document.createElement("div");
+    userInfo.classList.add("user-info");
+    userInfo.textContent = username;
+
+    var commentText = document.createElement("div");
+    commentText.classList.add("comment-text");
+    commentText.textContent = comment;
+
+    var ratingElement = document.createElement("div");
+    ratingElement.classList.add("rating");
+    ratingElement.textContent = "Calificación: " + rating + "/5";
+
+    // Agregar elementos al contenedor del comentario
+    commentContainer.appendChild(userInfo);
+    commentContainer.appendChild(commentText);
+    commentContainer.appendChild(ratingElement);
+
+    // Agregar el contenedor del comentario a la sección de comentarios
+    commentsSection.appendChild(commentContainer);
+}
+
+// Simulación de inicio de sesión (deberías implementar esto en el servidor)
+function simulateLogin(username) {
+    currentUser = { username: username };
+    document.getElementById("user-info").textContent = username;
+}
+
+// Llamada de ejemplo para simular el inicio de sesión
+simulateLogin("Usuario1");
+</script>
+{% endblock %}
