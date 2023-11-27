@@ -57,14 +57,15 @@
         <div class="menu-item">
           <img
             src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop"
-            alt="Hamburguesa 1"
-          />
+            alt="Hamburguesa 1"/>
+            <a href="{{url_for('pages.plato')}}">
           <div class="item-details">
             <h4>Hamburguesa Clásica</h4>
             <p>
               Una hamburguesa deliciosa con todos los ingredientes clásicos.
             </p>
           </div>
+          </a>
         </div>
         <!-- Agrega más opciones de hamburguesas aquí -->
         <div class="menu-item">
@@ -72,10 +73,12 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEnfLmuOugf84c3iVMqaKu8j51yNYgLjjg&usqp=CAU"
             alt="Whopper"
           />
+          <a class="btn btn-primary btn-restaurate" href="{{url_for('pages.plato')}}">
           <div class="item-details">
             <h4>Whopper</h4>
             <p>Otra deliciosa hamburguesa especial.</p>
           </div>
+        </a>
         </div>
         <div class="menu-item">
           <img
@@ -85,6 +88,7 @@
           <div class="item-details">
             <h4>Whopper Jr</h4>
             <p>Otra deliciosa hamburguesa especial más.</p>
+            <a class="btn btn-primary btn-restaurate" href="{{url_for('pages.plato')}}">Ver Menu</a>
           </div>
         </div>
         <div class="menu-item">
@@ -95,6 +99,7 @@
           <div class="item-details">
             <h4>King de pollo</h4>
             <p>Otra deliciosa hamburguesa especial.</p>
+            <a class="boton-plato" href="{{url_for('pages.plato')}}">Ver Plato</a>
           </div>
         </div>
       </div>
