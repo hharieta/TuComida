@@ -84,3 +84,7 @@ def registro():
 @pages_bp.route('/400')
 def err_404(error):
     return render_template('404.html')
+
+@pages_bp.route('/plato')
+def plato():
+    return render_template('plato.html')
