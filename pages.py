@@ -29,7 +29,7 @@ def login():
         if logged_user is not None:
             login_user(logged_user) 
             flash("Login successful")
-            return redirect(url_for('pages.index'))
+            return redirect(url_for('pages.homeuser'))
         else:
             flash("Invalid email or password")
             return render_template('login.html')
@@ -40,6 +40,10 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+@pages_bp.route('/homeuser')
+def homeuser():
+    return render_template('homeuser.html')
 
 @pages_bp.route('/register')
 def register():
