@@ -9,6 +9,17 @@
       opacity: 1;
     }
   }
+
+  .banner-title {
+    font-size: 4.5em; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-bottom: -15px; /* Ajusta el margen inferior según tus preferencias */
+    margin-top: -180px;
+  }
+  
+  .banner-description {
+    font-size: 1.5em; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-bottom: 20px; /* Ajusta el margen inferior según tus preferencias */
+  }
   
   .fadeIn {
     animation-name: fadeIn;
@@ -19,7 +30,7 @@
   }
   
   .title {
-    font-size: 40px;
+    font-size: 20px;
     color: #025157;
     margin-bottom: 12px;
   }
