@@ -1,12 +1,11 @@
-{% extends './base.html' %}
-
-{% block title %}TuComida - {{ super() }}{% endblock %}
-
-{% block customCSS %}
-  <link rel="stylesheet" href="{{url_for('static', filename='css/restaurant.css')}}" />
-
-{% endblock %}
-{% block content %}
+{% extends './base.html' %} {% block title %}TuComida - {{ super() }}{% endblock
+  %} {% block customCSS %}
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/restaurant.css')}}"
+  />
+  
+  {% endblock %} {% block content %}
   <body>
     <div class="restaurant-profile">
       <div class="cover-photo">
@@ -27,7 +26,7 @@
         <p>Lunes a Viernes: 10:00 AM - 10:00 PM</p>
         <p>Sábado y Domingo: 11:00 AM - 9:00 PM</p>
       </div>
-
+  
       <h3>Menús</h3>
       <div
         class="menu-categories"
@@ -47,7 +46,7 @@
         </div>
       </div>
     </div>
-
+  
     <div class="menu-options">
       <div class="category-content" id="all-content"></div>
     </div>
@@ -55,16 +54,19 @@
       <h5>Hamburguesas</h5>
       <div class="menu-items">
         <div class="menu-item">
-          <img
-            src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop"
-            alt="Hamburguesa 1"/>
-            <a href="{{url_for('pages.plato')}}">
-          <div class="item-details">
-            <h4>Hamburguesa Clásica</h4>
-            <p>
-              Una hamburguesa deliciosa con todos los ingredientes clásicos.
-            </p>
-          </div>
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img
+              src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop"
+              alt="Hamburguesa 1"
+            />
+             <div class="item-details-text">
+              <h4>Hamburguesa Clásica</h4>
+              <p>
+                Una hamburguesa deliciosa con todos los ingredientes clásicos.
+              </p>
+             </div>
+            </div>
           </a>
         </div>
         <!-- Agrega más opciones de hamburguesas aquí -->
@@ -73,12 +75,15 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEnfLmuOugf84c3iVMqaKu8j51yNYgLjjg&usqp=CAU"
             alt="Whopper"
           />
-          <a class="btn btn-primary btn-restaurate" href="{{url_for('pages.plato')}}">
-          <div class="item-details">
-            <h4>Whopper</h4>
-            <p>Otra deliciosa hamburguesa especial.</p>
-          </div>
-        </a>
+          <a
+            class="btn btn-primary btn-restaurate"
+            href="{{url_for('pages.plato')}}"
+          >
+            <div class="item-details">
+              <h4>Whopper</h4>
+              <p>Otra deliciosa hamburguesa especial.</p>
+            </div>
+          </a>
         </div>
         <div class="menu-item">
           <img
@@ -88,7 +93,11 @@
           <div class="item-details">
             <h4>Whopper Jr</h4>
             <p>Otra deliciosa hamburguesa especial más.</p>
-            <a class="btn btn-primary btn-restaurate" href="{{url_for('pages.plato')}}">Ver Menu</a>
+            <a
+              class="btn btn-primary btn-restaurate"
+              href="{{url_for('pages.plato')}}"
+              >Ver Menu</a
+            >
           </div>
         </div>
         <div class="menu-item">
@@ -104,7 +113,7 @@
         </div>
       </div>
     </div>
-
+  
     <div class="category-content" id="kids-content">
       <h5>Nuggets</h5>
       <div class="menu-items">
@@ -141,7 +150,7 @@
         <!-- Agrega más opciones de nuggets aquí -->
       </div>
     </div>
-
+  
     <div class="category-content" id="healthy-content">
       <h5>Ensaladas</h5>
       <div class="menu-items">
@@ -201,7 +210,7 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div style="padding-left: 1rem; padding-top: 2rem;">
+      <div style="padding-left: 1rem; padding-top: 2rem">
         <h3>Ubicación</h3>
         <p>Dirección: Av. Ejemplo 123, Ciudad Ejemplo</p>
         <p>Teléfono: +123 456 789</p>
@@ -214,8 +223,7 @@
     </div>
     {% block scripts %}
     <script src="{{url_for('static', filename='scripts/restaurant.js')}}"></script>
-    {{ super() }}
-    {% endblock %}
+    {{ super() }} {% endblock %}
   </body>
   {% endblock %}
-
+  
