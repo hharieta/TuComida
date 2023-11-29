@@ -102,10 +102,10 @@
     border-top: none;
   }
   .btn.btn-primary {
-    border: solid 1px #025157;
+    border: solid 1px var(--first-color-light);
     color: #fffbf7;
     font-weight: 600;
-    background-color: #025157;
+    background-color: var(--first-color-light);
     border-radius: 5px;
     padding: 8px 16px;
   }
