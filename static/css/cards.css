@@ -110,14 +110,14 @@
     padding: 8px 16px;
   }
   .btn.btn-primary:hover {
-    background-color: #025157ec;
+    background-color: var(--first-color);
     cursor: pointer;
   }
   .btn.btn-primary:focus {
-    box-shadow: 0 0 0 1px #02515798;
+    box-shadow: 0 0 0 1px var(--first-color);
   }
   .btn.btn-primary:active {
-    background-color: #025157e2;
+    background-color: var(--first-color);
   }
   .btn.expanded {
     width: 100%;

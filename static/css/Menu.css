@@ -196,9 +196,29 @@
     background-color: rgba(239, 166, 81, 1); 
     border-color: rgba(239, 166, 81, 1);
 }
+.btn.btn-primary {
+    border: solid 1px var(--first-color-light);
+    color: #fffbf7;
+    font-weight: 600;
+    background-color: var(--first-color-light);
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--first-color);
+    cursor: pointer;
+}
+.btn.btn-primary:focus {
+box-shadow: 0 0 0 1px var(--first-color);
+}
+.btn.btn-primary:active {
+background-color: var(--first-color);
+}
 
 .restaurante button:hover {
-    background-color: #ff7700;
+    background-color: var(--first-color);
+    border-color: var(--first-color);
 }
 .search-bar button:hover {
     background-color: rgb(255, 255, 255);
