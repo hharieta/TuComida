@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from flask_login import LoginManager, login_user, logout_user, login_required
 from models import User
 from config import connex_app
-from services import CheckLogin, UserLogin
+from services import CheckLogin, UserLogin, UserRegister
 import logging
 
 pages_bp = Blueprint('pages', __name__, template_folder='templates', static_folder='static')
@@ -22,9 +22,8 @@ def index():
 def login():
     if request.method == 'POST':
         user = CheckLogin(request.form['email'], request.form['password'])
-        print(f"User: {user.email}, Password: {user.password}")
+        
         logged_user = UserLogin.login(user)
-        print(f"Logged User: {logged_user}")
 
         if logged_user is not None:
             login_user(logged_user) 
@@ -36,18 +35,51 @@ def login():
 
     return render_template('login.html')
 
+@pages_bp.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        email = request.form['email']
+        names = request.form['names']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+        surname = request.form['surname']
+        datebirth = request.form['datebirth']
+        terms = request.form['terms']
+
+        if UserRegister.validate_email(email) is False:
+            flash("User already exists")
+            return render_template('register.html')
+        if UserRegister.validate_password(password, confirm_password) is None:
+            flash("Passwords do not match")
+            return  render_template('register.html')
+        if UserRegister.validate_terms(terms) is None:
+            flash("You must accept the terms and conditions")
+            return  render_template('register.html')
+        
+        user_signed = UserRegister.register(email, password, names, surname, datebirth)
+
+        if user_signed:
+            return redirect(url_for('pages.login'))
+        else:
+            return  render_template('register.html')
+        
+    else:
+        return render_template('register.html')
+    
+
 @pages_bp.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('login'))
 
 @pages_bp.route('/homeuser')
+@login_required
 def homeuser():
     return render_template('homeuser.html')
 
-@pages_bp.route('/register')
-def register():
-    return render_template('register.html')
+# @pages_bp.route('/register')
+# def register():
+#     return render_template('register.html')
 
 @pages_bp.route('/menus')
 def menus():

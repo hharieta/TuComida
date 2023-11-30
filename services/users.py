@@ -116,3 +116,52 @@ class UserLogin():
                 return None
         except Exception as e:
             raise Exception(e)
+
+class UserRegister():
+
+    @classmethod
+    def validate_password(cls, password, confirm_password):
+        if password == confirm_password:
+            return True
+        else:
+            return None
+    
+    @classmethod
+    def validate_terms(cls, terms):
+        if terms == 'on':
+            return True
+        else:
+            return None
+    
+    @classmethod
+    def validate_email(cls, email):
+        try:
+            exist_user = User.query.filter(User.email == email).one_or_none()
+
+            if exist_user is None:
+                return True
+            else:
+                return False
+        except Exception as e:
+            raise Exception(e)
+    
+    @classmethod
+    def register(cls, email, password, names, surname, datebirth):
+        try:
+            exist_user = User.query.filter(User.email == email).one_or_none()
+
+            if exist_user is None:
+                new_user = User(
+                    email = email,
+                    password = CheckLogin.gener_password_hash(password),
+                    names = names,
+                    surname = surname,
+                    datebirth = datebirth
+                )
+                db.session.add(new_user)
+                db.session.commit()
+                return True
+            else:
+                return False
+        except Exception as e:
+            raise Exception(e)
