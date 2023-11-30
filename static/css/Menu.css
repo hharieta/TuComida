@@ -241,12 +241,12 @@ section {
 #menu {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    
 }
 
 .menu-item {
-    flex: 0 0 calc(33.3% - 20px);
-    margin: 20px 0;
+    flex: 0 0 calc(33.3% - 4rem);
+    margin: 2rem;
     padding: 15px;
     background-color: #fff;
     border: 2px solid #ddd;
@@ -292,4 +292,28 @@ section {
     padding-bottom: 20px;
     border-radius: 20px;
     transition: transform 0.4s ease-in-out;
+  }
+
+  @media screen and (max-width:800px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    .restaurantes {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+  @media screen and (max-width:1024px){
+    .menu-item {
+        margin: 1rem;
+    }
+    .menu-item img {
+        height: 200px;
+    }
+  }
+
+  @media screen and (min-width:1024px){
   }

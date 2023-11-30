@@ -180,7 +180,9 @@
 }
 
 .search-container {
-    margin: 20px;
+    margin: 0;
+    width: 100%;
+    align-items: center;
 }
 
 form {
@@ -201,7 +203,7 @@ input {
 }
 
 button {
-    background: #025157;
+    background: var(--first-color);
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -209,7 +211,7 @@ button {
 }
 
 button:hover {
-    background: #037e86;
+    background: var(--first-color-light);
 }
 
 .fa-search {
