@@ -174,3 +174,44 @@
     background: #025157;
     border-color: #025157;
   }
+
+  header {
+    text-align: center;
+}
+
+.search-container {
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    max-width: 400px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    background: #025157;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #037e86;
+}
+
+.fa-search {
+    margin-right: 5px;
+}
