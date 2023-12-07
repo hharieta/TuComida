@@ -1,0 +1,185 @@
+{% extends './base.html' %}
+{% block title %}TuComida - {{ super() }}{% endblock %}
+{% block customCSS %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/restaurant.css')}}" />
+{% endblock %}
+{% block content %}
+<body>
+  <div class="restaurant-profile">
+    <div class="cover-photo">
+      <img src="{{url_for('static', filename='img/menu-c13-2.jpg')}}" alt="Portada del restaurante" />
+      <div class="profile-photo">
+        <img src="{{url_for('static', filename='img/perfil13.jpg')}}" alt="Foto de perfil del restaurante" />
+      </div>
+    </div>
+    <h3>El rinconcito de Puebla</h3>
+    <div class="restaurant-hours">
+      <h4>Horario del Restaurante</h4>
+      <p>Domingo a Sábado: 11:00 AM - 12:00 AM</p>
+    </div>
+
+    <h3>Menús</h3>
+    <div class="menu-categories" style="position: relative; left: 25%; right: 25%">
+      <div class="category" id="all-tab">
+        <h4>Todos</h4>
+      </div>
+      <div class="category" id="adults-tab">
+        <h4>Adultos</h4>
+      </div>
+      <div class="category" id="kids-tab">
+        <h4>Niños</h4>
+      </div>
+      <div class="category" id="healthy-tab">
+        <h4>Bebidas</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-options">
+    <div class="category-content" id="all-content"></div>
+  </div>
+
+  <div class="category-content" id="adults-content">
+    <h5>Platos</h5>
+    <div class="menu-items">
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-4.jpg')}}" alt="Pescado frito" />
+            <div class="item-details-text">
+              <h4>Pescado frito</h4>
+              <p>Pescado frito al carbón con ensalada</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-2.jpg')}}" alt="Empanadas de queso" />
+            <div class="item-details-text">
+              <h4>Empanadas de queso</h4>
+              <p>Empanadas de queso entomatadas con una guarnición de arroz</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-3.jpg')}}" alt="Tostadas con carne" />
+            <div class="item-details-text">
+              <h4>Tostadas de carne</h4>
+              <p>Tostadas de carne de res con frijoles y crema</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-1.jpg')}}" alt="Tacos de pollo" />
+            <div class="item-details-text">
+              <h4>Tacos de pollo</h4>
+              <p>Tacos de pollo al perejil</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-content" id="kids-content">
+    <h5>Infantil</h5>
+    <div class="menu-items">
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-6.jpg')}}" alt="Quesadillas" />
+            <div class="item-details-text">
+              <h4>Quesadillas</h4>
+              <p>Quesadillas para los más pequeños</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-7.jpg')}}" alt="Enmoladas con queso" />
+            <div class="item-details-text">
+              <h4>Enmoladas con queso</h4>
+              <p>Enmoladas con queso y crema (opcional)</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="{{url_for('pages.plato')}}">
+          <div class="item-details">
+            <img src="{{url_for('static', filename='img/menu-c13-9.jpg')}}" alt="Huevito infantil" />
+            <div class="item-details-text">
+              <h4>Huevito infantil</h4>
+              <p>Huevo estrellado con frijo y papas especiales</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Agrega más opciones de nuggets aquí -->
+    </div>
+  </div>
+
+  <div class="category-content" id="healthy-content">
+    <h5>Bebidas</h5>
+      <div class="menu-items">
+        <div class="menu-item">
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="{{url_for('static', filename='img/menu-c13-11.jfif')}}" alt="Jugo natural" />
+              <div class="item-details-text">
+                <h4>Jugo natural</h4>
+                <p>1lt de jugo natural de horchata, jamaica, limón o piña</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="{{url_for('static', filename='img/menu-m13-12.avif')}}" alt="Agua natural" />
+              <div class="item-details-text">
+                <h4>Agua natural</h4>
+                <p>1lt de agua natural fresca y refrescante</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Resto del contenido del perfil del restaurante... -->
+
+  <div class="location-details">
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7441.528279346156!2d-86.83611989021303!3d21.161782676139836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2c00ce16fc3b%3A0xe6f92517a97d5413!2sRestaurante%20El%20Rinconcito%20De%20Puebla!5e0!3m2!1ses!2sus!4v1701938783507!5m2!1ses!2sus"      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <div style="padding-left: 1rem; padding-top: 2rem">
+      <h3>Ubicación</h3>
+      <p>Dirección: Av. Ejemplo 123, Ciudad Ejemplo</p>
+      <p>Teléfono: +123 456 789</p>
+      <p>Horario: Lunes a Domingo, 10:00 AM - 10:00 PM</p>
+      <p>
+        Sobre la esquina de la gran plaza, frente a una casa blanca, sobre la
+        Av. Nichupté y Calle Nichupté
+      </p>
+    </div>
+  </div>
+  {% block scripts %}
+  <script src="{{url_for('static', filename='scripts/restaurant.js')}}"></script>
+  {{ super() }} {% endblock %}
+</body>
+{% endblock %}
