@@ -38,6 +38,8 @@
 }
 
 .cover-photo {
+    display: flex;
+    align-items: center;
     position: relative;
     height: 18.5rem;
     overflow: hidden;
@@ -245,10 +247,10 @@
         text-align: left;
     }
 
-    .cover-photo {
+    /* .cover-photo {
         height: auto;
         border-radius: 0;
-    }
+    } */
     .menu-categories {
         flex-direction: column;
         background: var(--bg-color);
@@ -290,10 +292,10 @@
         text-align: left;
     }
 
-    .cover-photo {
+    /* .cover-photo {
         border-radius: 0;
         height: auto;
-    }
+    } */
     .menu-categories {
         flex-direction: column;
         background: var(--bg-color);
