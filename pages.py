@@ -124,3 +124,7 @@ def err_404(error):
 @pages_bp.route('/plato')
 def plato():
     return render_template('plato.html')
+
+@pages_bp.route('/restaurant13')
+def restaurant13():
+    return render_template('restaurant13.html')
