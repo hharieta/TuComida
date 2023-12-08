@@ -5,6 +5,11 @@ class Eatery(db.Model):
     id_eatery = db.Column(db.Integer, primary_key=True, autoincrement=True)
     eatery = db.Column(db.String(20), nullable=False)
     cuisine = db.Column(db.String(20), nullable=False)
+    url_image = db.Column(db.String(255), nullable=False)
+    url_maps = db.Column(db.String(255), nullable=False)
+    address = db.Column(db.String)
+    phone = db.Column(db.String(20))
+    description = db.Column(db.String)
 
     __table_args__ = (
         db.Index('idx_eatery_name', "eatery"),

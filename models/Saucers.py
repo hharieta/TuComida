@@ -23,7 +23,8 @@ class SaucerSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
         sql_session = db.session
     
-    eatery = fields.Nested(EaterySchema, only=('id_eatery', 'eatery', 'cuisine'))
+    # eatery = fields.Nested(EaterySchema, only=('id_eatery', 'eatery', 'cuisine', 'url_image', 'url_maps'))
+    eatery = fields.Nested(EaterySchema)
 
 saucer_schema = SaucerSchema()
 saucers_schema = SaucerSchema(many=True)

@@ -20,15 +20,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
     <h4 style="text-align: center; margin-top: 15rem;">Resultados</h4>
     <section class="container__section" id="results">
         {% for item in data %}
-        <div class="menu-item container__items">
-        <img
-            src="{{item['url_image']}}"
-            alt="Imagen del Plato 1"
-        />
-        <p>{{item['saucer_name']}}</p>
-        <p>${{item['price']}}</p>
-        <p>{{item['description']}}</p>
-        </div>
+            <div class="menu-item container__items">
+            <a href="{{ url_for('searchs.eatery', id_eatery=item['eatery']['id_eatery']) }}">
+            <img
+                src="{{item['url_image']}}"
+                alt="Imagen del Plato 1"
+            />
+            <a href="{{ url_for('searchs.eatery', data=data['eatery']) }}"></a>
+            <p>{{item['saucer_name']}}</p>
+            <p>${{item['price']}}</p>
+            <p>{{item['description']}}</p>
+            </a>
+            </div>
         {% endfor%}
         <!-- Agrega más elementos según sea necesario -->
     </section>
