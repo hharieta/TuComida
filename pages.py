@@ -128,3 +128,11 @@ def plato():
 @pages_bp.route('/restaurant13')
 def restaurant13():
     return render_template('restaurant13.html')
+
+@pages_bp.route('/ElCHANGARRO')
+def ElCHANGARRO():
+    return render_template('ElCHANGARRO.html')
+
+@pages_bp.route('/DonSirlon')
+def DonSirlon():
+    return render_template('DonSirlon.html')
