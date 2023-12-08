@@ -1,0 +1,37 @@
+{% extends './base.html' %} 
+{% block title %}TuComida - {{ super() }}{% endblock%} 
+{% block customCSS %}
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/Menu.css') }}"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+{% endblock %} 
+
+{% block content %}
+{% if (data) %}
+    <section id="results">
+        <h4>Resultados</h4>
+        {% for item in data[0] %}
+        <div class="menu-item">
+        <img
+            src="{{item.url_image}}"
+            alt="Imagen del Plato 1"
+        />
+        <span>{{item.saucer_name}}</span>
+        <span>${{item.price}}</span>
+        <span>{{item.description}}</span>
+        </div>
+        {% endfor%}
+        <!-- Agrega más elementos según sea necesario -->
+    </section>
+{% else %}
+    <p>No hay resultados para la busqueda:
+        <strong class="menu-item"> {{ searched }}</strong>
+    </p>
+{% endif %}
+
+{% endblock %}
