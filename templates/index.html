@@ -1,68 +1,1754 @@
-{% extends './base.html' %}
-
-{% block title %}TuComida - {{ super() }}{% endblock %}
-
-{% block customCSS %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
-{% endblock %}
-
-{% block content %}
+{% extends './base.html' %} {% block title %}TuComida - {{ super() }}{% endblock
+  %} {% block customCSS %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/cards.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/Menu.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  
+  {% endblock %} {% block content %}
   <body>
+    <div class="categorias">
+      <div class="categorias-scroll">
+        <div class="categorias-display">
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Hamburguesa"
+                    src="{{url_for('static', filename='img/hamburguesa.png')}}"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Hamburguesa"
+                      src="{{url_for('static', filename='img/hamburguesa.png')}}"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Hamburguesa</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Pastel"
+                    src="{{url_for('static', filename='img/pastel.png')}}"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Pastel"
+                      src="{{url_for('static', filename='img/pastel.png')}}"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Pasteles</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="alitas"
+                    src="{{url_for('static', filename='img/alitas.png')}}"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="alitas"
+                      src="{{url_for('static', filename='img/alitas.png')}}"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Alitas</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Tacos"
+                    src="{{url_for('static', filename='img/tacos.png')}}"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Tacos"
+                      src="{{url_for('static', filename='img/tacos.png')}}"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Tacos</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Pizza"
+                    src="https://th.bing.com/th/id/R.32eb1934767bed0651f4db08ed4663d4?rik=XuaLWJYEoHvjow&riu=http%3a%2f%2fwww.agrodolce.it%2fwp-content%2fuploads%2f2016%2f01%2fpizza-napoletana-min.jpg&ehk=4GK2lO9Hc2jAJIfY9ycS%2fOPdUr7I3uPkbDpx44SZZLk%3d&risl=&pid=ImgRaw&r=0"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Pizza"
+                      src="https://th.bing.com/th/id/R.32eb1934767bed0651f4db08ed4663d4?rik=XuaLWJYEoHvjow&riu=http%3a%2f%2fwww.agrodolce.it%2fwp-content%2fuploads%2f2016%2f01%2fpizza-napoletana-min.jpg&ehk=4GK2lO9Hc2jAJIfY9ycS%2fOPdUr7I3uPkbDpx44SZZLk%3d&risl=&pid=ImgRaw&r=0"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Pizza</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Sushi"
+                    src="{{url_for('static', filename='img/sushi.png')}}"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Sushi"
+                      src="{{url_for('static', filename='img/sushi.png')}}"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Sushi</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Italiana"
+                    src="https://th.bing.com/th/id/OIP.InA2CSAAMm3mGk1tobycjQHaE8?pid=ImgDet&rs=1"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Italiana"
+                      src="https://th.bing.com/th/id/OIP.InA2CSAAMm3mGk1tobycjQHaE8?pid=ImgDet&rs=1"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Italiana</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="China"
+                    src="https://th.bing.com/th/id/OIP.0_J85WdDsAijSpJq-9z1RQHaE8?pid=ImgDet&w=2000&h=1335&rs=1"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="China"
+                      src="https://th.bing.com/th/id/OIP.0_J85WdDsAijSpJq-9z1RQHaE8?pid=ImgDet&w=2000&h=1335&rs=1"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">China</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Pollo"
+                    src="https://th.bing.com/th/id/OIP.lA3KRIEktNYgolm0bEEiCAHaHa?pid=ImgDet&rs=1"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Pollo"
+                      src="https://th.bing.com/th/id/OIP.lA3KRIEktNYgolm0bEEiCAHaHa?pid=ImgDet&rs=1"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Pollo</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Asados"
+                    src="https://foodandtravel.mx/wp-content/uploads/2016/06/Crockpot-Carnitas.jpg"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Asados"
+                      src="https://foodandtravel.mx/wp-content/uploads/2016/06/Crockpot-Carnitas.jpg"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Asados</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Vegana"
+                    src="https://images.pexels.com/photos/1359305/pexels-photo-1359305.jpeg?cs=srgb&dl=bowl-delicious-food-1359305.jpg&fm=jpg"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Vegana"
+                      src="https://images.pexels.com/photos/1359305/pexels-photo-1359305.jpeg?cs=srgb&dl=bowl-delicious-food-1359305.jpg&fm=jpg"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Vegana</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Ensaladas"
+                    src="https://www.denia.com/wp-content/uploads/2019/09/ensalada-para-llevar-orozco-770x769.jpg"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Ensaladas"
+                      src="https://www.denia.com/wp-content/uploads/2019/09/ensalada-para-llevar-orozco-770x769.jpg"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Ensaladas</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Mariscos"
+                    src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Mariscos</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Empanadas"
+                    src="https://th.bing.com/th/id/OIP.RHV1fDLVREqP0eUSoKd4wgHaE8?pid=ImgDet&rs=1"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Empanadas"
+                      src="https://th.bing.com/th/id/OIP.RHV1fDLVREqP0eUSoKd4wgHaE8?pid=ImgDet&rs=1"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Empanadas</span>
+          </button>
+          <button class="categorias-box">
+            <div class="categorias-1j3lhdz">
+              <div class="categorias-hbVrBp">
+                <span
+                  style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                  "
+                >
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      padding-top: 100%;
+                    "
+                  ></span>
+                  <img
+                    alt="Tortas"
+                    src="https://th.bing.com/th/id/OIP.ApVKZGv6PP8FYX1GH7g5jgAAAA?pid=ImgDet&rs=1"
+                    class="categorias-img1 categorias-jeCGGt"
+                  />
+                  <noscript>
+                    <img
+                      alt="Tortas"
+                      src="https://th.bing.com/th/id/OIP.ApVKZGv6PP8FYX1GH7g5jgAAAA?pid=ImgDet&rs=1"
+                      data-nimg="responsive"
+                      class="categorias-img2 categorias-jeCGGt"
+                      loading="lazy"
+                    />
+                  </noscript>
+                </span>
+              </div>
+            </div>
+            <span class="span-text">Tortas</span>
+          </button>
+          <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Caldos"
+                      src="https://th.bing.com/th/id/R.fd7b3b5ba78f762fcb87e0792cbb48dd?rik=g0PnXO90lJOAoA&pid=ImgRaw&r=0"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Caldos"
+                        src="https://th.bing.com/th/id/R.fd7b3b5ba78f762fcb87e0792cbb48dd?rik=g0PnXO90lJOAoA&pid=ImgRaw&r=0"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Caldos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+            <button class="categorias-box">
+              <div class="categorias-1j3lhdz">
+                <div class="categorias-hbVrBp">
+                  <span
+                    style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "
+                  >
+                    <span
+                      style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 100%;
+                      "
+                    ></span>
+                    <img
+                      alt="Mariscos"
+                      src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                      class="categorias-img1 categorias-jeCGGt"
+                    />
+                    <noscript>
+                      <img
+                        alt="Mariscos"
+                        src="https://files.agro20.com.br/uploads/2020/10/mariscos-1.jpg"
+                        data-nimg="responsive"
+                        class="categorias-img2 categorias-jeCGGt"
+                        loading="lazy"
+                      />
+                    </noscript>
+                  </span>
+                </div>
+              </div>
+              <span class="span-text">Mariscos</span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--parte original de la home-->
     <section class="banner">
       <div class="banner-container">
+        <br />
         <h1 class="banner-title">TuComida</h1>
         <p class="banner-description">Tú Come</p>
         <!--redireccionamiento menu-->
-        <a href="{{url_for('pages.menus')}}" class="bnt-menu">RESTAURANTES</a>
-
-
-
-        <a href="{{url_for('pages.contac')}}" class="btn-1">Contáctanos</a>
-        <!-- <div class="banner-email">
-                        <input type="email" name="email" id="email" class="banner-email-input" placeholder="Correo electrónico">
-                        <button class="banner-email-btn">Enviar</button>
-                    </div>
-                    <p class="banner-text">Registra tu correo para recibir <b>descuentos</b>.</p> -->
       </div>
+      <div class="search-container">
+        <form action="[AQUI DEBERÍA IR LO DE EL JS]">
+          <input
+            type="text"
+            placeholder="Buscar plato, categoría o restaurante..."
+            name="search"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <!--fin de parte original de home-->
     </section>
+  
+    <section id="menu">
+      <div class="menu-item">
+        <img
+          src="https://www.clara.es/medio/2021/12/16/que-comer-hoy-ideas_21beeb02_1200x630.jpg"
+          alt="Imagen del Plato 1"
+        />
+        <span>Lasagna (Spaletti´s)</span>
+        <span>$150</span>
+      </div>
+  
+      <div class="menu-item">
+        <img
+          src="https://www.upmenu.com/wp-content/uploads/2022/08/comida-rapida-a-domicilo-1200x900.jpg"
+          alt="Imagen del Plato 2"
+        />
+        <span>Hamburguesa Gourmet (The burger house)</span>
+        <span>$229</span>
+      </div>
+  
+      <div class="menu-item">
+        <img
+          src="https://pbs.twimg.com/media/E8W3QkJWEAMoK2z.jpg:large"
+          alt="Imagen del Plato 2"
+        />
+        <span>Pizza de queso (Little Caesars)</span>
+        <span>$129</span>
+      </div>
+  
+      <!-- Agrega más elementos según sea necesario -->
+    </section>
+  
+    <h2 style="text-align: center; margin-top: 60px">Restaurantes</h2>
+    <section class="restaurantes">
+      <!--RESTAURANTES VENTANAS-->
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+  
+        <br />
+        <p><b>McDonald´s Portillo</b></p>
+        <p>
+          Horario: 8:00-22:00<br />
+          Sasona con tu salsa perfecta
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media-cdn.tripadvisor.com/media/photo-p/12/a5/2e/91/entrada.jpg"
+          alt="Restaurante 1"
+        />
+        <br />
+        <p><b>La Salsona tec</b></p>
+        <p>
+          Horario: 8:00-22:00<br />
+          Sasona con tu salsa perfecta
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://th.bing.com/th/id/R.1b58813e361fb51a02aeb7ba4b598678?rik=%2fPg%2bvhY8MtKE3A&riu=http%3a%2f%2fwww.cancunholidaysinfo.com%2fimages%2frestaurant%2fla-parrilla%2ft_la-parrilla_16.jpg&ehk=IRY5SoiQ8Osa2Xc3De1iQypU3ZiQpqpWFogs7hQFSVo%3d&risl=&pid=ImgRaw&r=0"
+          alt="Restaurante 1"
+        />
+        <br />
+        <p><b>La Parrilla</b></p>
+        <p>
+          Horario: 4:00-24:00<br />
+          Comida Altamente Mexicana
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://i2.ypcdn.com/blob/52f3417140d3695ab38fab660488546804c9cd3a"
+          alt="Restaurante 1"
+        />
+        <br />
+        <p><b>Los Burritos</b></p>
+        <p>
+          Horario: 8:00-20:00<br />
+          Los mejores burritos a tu alcance
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://th.bing.com/th/id/OIP.i-RLjDwhYlDuTyWNk072UgHaED?pid=ImgDet&rs=1"
+          alt="Restaurante 1"
+        />
+        <br />
+        <p><b>Los Arcos</b></p>
+        <p>
+          Horario: Jueves 8:00-22:00<br />
+          Los mas fresco del pacifico
+          <br /><br />
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://scontent.fisj1-1.fna.fbcdn.net/v/t39.30808-6/277350706_1414080969059108_3652136368693410536_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ebN4-KMu7dkAX-xLybN&_nc_ht=scontent.fisj1-1.fna&oh=00_AfABH2Jzx1p5JECUfRFibJAA2GprlFd32A0bO_93xehd4w&oe=6551B09E"
+          alt="Restaurante 1"
+        />
+        <p><b>Don Camaron</b></p>
+        <p>
+          Horario: 8:00-20:00<br />
+          Marisqueria
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://scontent.fisj1-1.fna.fbcdn.net/v/t31.18172-8/12030382_1695838017302120_5296696795569767635_o.jpg?_nc_cat=109&ccb=1-7&_nc_sid=c2f564&_nc_ohc=G6ZeI2p5pDYAX9UWiEe&_nc_ht=scontent.fisj1-1.fna&oh=00_AfDqW7soSpabKOUuLX_urh_v2MDhoOidWn9S0j9YlXPyvg&oe=65751CD4"
+          alt="Restaurante 1"
+        />
+        <p><b>toyko sushsi y bol</b></p>
+        <p>
+          Rollos y Sushi<br />
+          Horario: 10:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <!--Se reemplazo las ventanas class"restaurante" por menos info-->
+
+      <div class="restaurante">
+        <img
+          src="https://th.bing.com/th/id/R.091be1537fcd17315b60a68a376f937c?rik=i%2fxEmqyegihRNQ&pid=ImgRaw&r=0"
+          alt="Restaurante 1"
+        />
+        <p><b>El Chaquiris</b></p>
+        <p>
+          Comida Mexicana<br />
+          Horario: 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://scontent.fisj1-1.fna.fbcdn.net/v/t39.30808-6/366296559_318734223833747_6978822985745852641_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=u946RVEx-pkAX8H2VmC&_nc_ht=scontent.fisj1-1.fna&oh=00_AfBKclguUZoUdYU4aStvySUmlrbE4z6tnoJnihpKzbalRg&oe=6552B39D"
+          alt="Restaurante 1"
+        />
+        <p><b>Ben Fatto </b></p>
+        <p>
+          Pastas con sason italiano<br />
+          Horario: 11:00-24:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://img.restaurantguru.com/r8b4-sandwich-Tortas-Goyo-2022-08-2.jpg"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <div class="restaurante">
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+          alt="Restaurante 1"
+        />
+        <p><b>Tortas Goyo</b></p>
+        <p>
+          Tortas<br />
+          Jueves 8:00-22:00
+        </p>
+        <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+          >Ver Menu</a
+        >
+      </div>
+      <!-- <div class="restaurante">
+          <img
+            src="https://scontent.fisj1-1.fna.fbcdn.net/v/t39.30808-6/277350706_1414080969059108_3652136368693410536_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ebN4-KMu7dkAX-xLybN&_nc_ht=scontent.fisj1-1.fna&oh=00_AfABH2Jzx1p5JECUfRFibJAA2GprlFd32A0bO_93xehd4w&oe=6551B09E"
+            alt="Restaurante 1"
+          />
+          <p><b>Don Camaron</b></p>
+          <p>
+            Horario: 8:00-20:00<br />
+            Marisqueria
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://scontent.fisj1-1.fna.fbcdn.net/v/t31.18172-8/12030382_1695838017302120_5296696795569767635_o.jpg?_nc_cat=109&ccb=1-7&_nc_sid=c2f564&_nc_ohc=G6ZeI2p5pDYAX9UWiEe&_nc_ht=scontent.fisj1-1.fna&oh=00_AfDqW7soSpabKOUuLX_urh_v2MDhoOidWn9S0j9YlXPyvg&oe=65751CD4"
+            alt="Restaurante 1"
+          />
+          <p><b>toyko sushsi y bol</b></p>
+          <p>
+            Rollos y Sushi<br />
+            Horario: 10:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        Se reemplazo las ventanas class"restaurante" por menos info
+  
+        <div class="restaurante">
+          <img
+            src="https://th.bing.com/th/id/R.091be1537fcd17315b60a68a376f937c?rik=i%2fxEmqyegihRNQ&pid=ImgRaw&r=0"
+            alt="Restaurante 1"
+          />
+          <p><b>El Chaquiris</b></p>
+          <p>
+            Comida Mexicana<br />
+            Horario: 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://scontent.fisj1-1.fna.fbcdn.net/v/t39.30808-6/366296559_318734223833747_6978822985745852641_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=u946RVEx-pkAX8H2VmC&_nc_ht=scontent.fisj1-1.fna&oh=00_AfBKclguUZoUdYU4aStvySUmlrbE4z6tnoJnihpKzbalRg&oe=6552B39D"
+            alt="Restaurante 1"
+          />
+          <p><b>Ben Fatto </b></p>
+          <p>
+            Pastas con sason italiano<br />
+            Horario: 11:00-24:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://img.restaurantguru.com/r8b4-sandwich-Tortas-Goyo-2022-08-2.jpg"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div>
+        <div class="restaurante">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220726123942-mcdonalds-earnings.jpg?c=original"
+            alt="Restaurante 1"
+          />
+          <p><b>Tortas Goyo</b></p>
+          <p>
+            Tortas<br />
+            Jueves 8:00-22:00
+          </p>
+          <a class="btn btn-primary btn-restaurante" href="{{url_for('pages.restaurant')}}"
+            >Ver Menu</a
+          >
+        </div> -->
+      <!--restaurantes Extra-->
+    </section>
+    <br />
+  
     <main class="services">
       <div class="services-content container">
         <h2>Fácil y rápido</h2>
         <div class="services-group">
           <div class="services-1">
-            <img src="{{url_for('static', filename='icons/search.svg')}}" alt="search" />
+            <img
+              src="{{url_for('static', filename='icons/search.svg')}}"
+              alt="search"
+            />
             <h3>Búsca locales</h3>
             <p>Encuentra lugares para comer y planifica tus salidas.</p>
           </div>
           <div class="services-1">
-            <img src="{{url_for('static', filename='icons/filter.svg')}}" alt="maps" />
+            <img
+              src="{{url_for('static', filename='icons/filter.svg')}}"
+              alt="maps"
+            />
             <h3>Filtra resultados</h3>
             <p>Encuentra lo que quieras según tus preferencias.</p>
           </div>
           <div class="services-1">
-            <img src="{{url_for('static', filename='icons/menu.svg')}}" alt="menu" />
+            <img
+              src="{{url_for('static', filename='icons/menu.svg')}}"
+              alt="menu"
+            />
             <h3>Visualiza menús</h3>
             <p>Mira los platillos en realidad aumentada</p>
           </div>
           <div class="services-1">
-            <img src="{{url_for('static', filename='icons/map.svg')}}" alt="maps" />
+            <img
+              src="{{url_for('static', filename='icons/map.svg')}}"
+              alt="maps"
+            />
             <h3>Explora direcciones</h3>
             <p>Llega sin problemas a tu local favorito.</p>
           </div>
         </div>
       </div>
     </main>
-
+  
     <section class="explanatory">
       <div class="explanatory-container">
         <div class="explanatory-video">
           <!-- <video controls poster="assets/img/logo2.png">
-                            <source src="assets/video/video-promo.mp4" type="video/mp4" />
-                            <source src="assets/video/video-promo.mp4" type="video/ogg" />
-                            Your browser does not support HTML video.
-                        </video> -->
+                              <source src="assets/video/video-promo.mp4" type="video/mp4" />
+                              <source src="assets/video/video-promo.mp4" type="video/ogg" />
+                              Your browser does not support HTML video.
+                          </video> -->
           <iframe
-            src="https://www.youtube.com/embed/QXdHVDrunwg?si=A7-rZUIdsB7Gzkz1&loop=1" 
+            src="https://www.youtube.com/embed/QXdHVDrunwg?si=A7-rZUIdsB7Gzkz1&loop=1"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -70,13 +1756,14 @@
           ></iframe>
           <img src="{{url_for('static', filename='img/IMG_0306.png')}}" />
         </div>
-
+  
         <div class="explanatory-description">
           <h2>¿Qué es lo que hacemos?</h2>
           <p>
-            <strong><b>TuComida</b></strong> simplifica la forma en que encuentras y exploras deliciosos
-            platillos o bocadillos. Nuestro objetivo es brindarte acceso rápido
-            a los menús de restaurantes y locales de todo tipo a tu disposición.
+            <strong><b>TuComida</b></strong> simplifica la forma en que encuentras
+            y exploras deliciosos platillos o bocadillos. Nuestro objetivo es
+            brindarte acceso rápido a los menús de restaurantes y locales de todo
+            tipo a tu disposición.
           </p>
           <span style="color: #46484c">Suscríbite:</span>
           <div class="explanatory-idea">
@@ -95,10 +1782,11 @@
     <section class="general">
       <div class="general-1">
         <h2>Busca</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-          Ullam molestias beatae quis id, rem nulla, vitae, eligendi 
-          voluptatibus voluptatem consequuntur maxime praesentium 
-          obcaecati sint vel. Eius odit perferendis quo fuga.
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam
+          molestias beatae quis id, rem nulla, vitae, eligendi voluptatibus
+          voluptatem consequuntur maxime praesentium obcaecati sint vel. Eius odit
+          perferendis quo fuga.
         </p>
         <a href="{{url_for('pages.contac')}}" class="btn-1">Contáctanos</a>
       </div>
@@ -108,50 +1796,60 @@
       <div class="general-3"></div>
       <div class="general-1">
         <h2>Encuentra</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-          Ullam molestias beatae quis id, rem nulla, vitae, eligendi 
-          voluptatibus voluptatem consequuntur maxime praesentium 
-          obcaecati sint vel. Eius odit perferendis quo fuga.
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam
+          molestias beatae quis id, rem nulla, vitae, eligendi voluptatibus
+          voluptatem consequuntur maxime praesentium obcaecati sint vel. Eius odit
+          perferendis quo fuga.
         </p>
         <a href="{{url_for('pages.contac')}}" class="btn-1">Contáctanos</a>
       </div>
     </section>
-
+  
     <section class="blog container">
       <h2>Reseñas</h2>
       <p>Lee las reseñas de los clientes</p>
       <div class="blog-content">
         <div class="blog-1">
-          <img src="{{url_for('static', filename='img/eno.jpg')}}" alt="eno">
+          <img src="{{url_for('static', filename='img/eno.jpg')}}" alt="eno" />
           <h3>Eno</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Aut, atque cumque, iure impedit repellendus minus consequatur 
-            optio sit numquam, praesentium id ea. Iure eos blanditiis culpa a, 
-            sunt quibusdam veritatis!
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, atque
+            cumque, iure impedit repellendus minus consequatur optio sit numquam,
+            praesentium id ea. Iure eos blanditiis culpa a, sunt quibusdam
+            veritatis!
           </p>
         </div>
         <div class="blog-1">
-          <img src="{{url_for('static', filename='img/darmir.jpg')}}" alt="darmir">
+          <img
+            src="{{url_for('static', filename='img/darmir.jpg')}}"
+            alt="darmir"
+          />
           <h3>Fonda Darmir</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Aut, atque cumque, iure impedit repellendus minus consequatur 
-            optio sit numquam, praesentium id ea. Iure eos blanditiis culpa a, 
-            sunt quibusdam veritatis!
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, atque
+            cumque, iure impedit repellendus minus consequatur optio sit numquam,
+            praesentium id ea. Iure eos blanditiis culpa a, sunt quibusdam
+            veritatis!
           </p>
         </div>
         <div class="blog-1">
-          <img src="{{url_for('static', filename='img/taquiza.jpg')}}" alt="taquiza">
+          <img
+            src="{{url_for('static', filename='img/taquiza.jpg')}}"
+            alt="taquiza"
+          />
           <h3>La Taquiza</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Aut, atque cumque, iure impedit repellendus minus consequatur 
-            optio sit numquam, praesentium id ea. Iure eos blanditiis culpa a, 
-            sunt quibusdam veritatis!
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, atque
+            cumque, iure impedit repellendus minus consequatur optio sit numquam,
+            praesentium id ea. Iure eos blanditiis culpa a, sunt quibusdam
+            veritatis!
           </p>
         </div>
       </div>
       <a href="{{url_for('pages.contac')}}" class="btn-1">Información</a>
     </section>
-
+  
     <section class="experiences">
       <div class="experiences__container">
         <article class="experience__left">
@@ -160,16 +1858,15 @@
             y encuentran en <strong><b>TuComida</b></strong>
           </h3>
           <p>
-            <strong><b>TuComida</b></strong> fue creada para facilitar la búsqueda y 
-            exploración de restaurantes al proporcionar menús, 
-            opciones culinarias y eventos especiales, 
-            todo en un solo lugar, para que planees tus comidas 
-            antes de llegar al restaurante.
+            <strong><b>TuComida</b></strong> fue creada para facilitar la búsqueda
+            y exploración de restaurantes al proporcionar menús, opciones
+            culinarias y eventos especiales, todo en un solo lugar, para que
+            planees tus comidas antes de llegar al restaurante.
           </p>
           <!-- <div class="experiences-idea">
-                      <input type="text" name="idea" id="idea" class="experiences-idea-input" placeholder="Enviar Correo...">
-                      <button class="experiences-idea-btn">Enviar &rarr;</button>
-                    </div> -->
+                        <input type="text" name="idea" id="idea" class="experiences-idea-input" placeholder="Enviar Correo...">
+                        <button class="experiences-idea-btn">Enviar &rarr;</button>
+                      </div> -->
           <div class="experiences__container_brand">
             <img
               class="brand"
@@ -195,7 +1892,7 @@
               src="{{url_for('static', filename='img/taqueria_brand.png')}}"
               alt="soy una marca"
             />
-
+  
             <img
               class="brand"
               height="100px"
@@ -233,7 +1930,11 @@
             <div class="slide-cards">
               <label class="card fadeIn animated" for="item-1" id="selector-1">
                 <div class="card-cover-image">
-                  <img class="img-fluid" src="{{url_for('static', filename='img/tarjeta.jpeg')}}" alt="" />
+                  <img
+                    class="img-fluid"
+                    src="{{url_for('static', filename='img/tarjeta.jpeg')}}"
+                    alt=""
+                  />
                   <div class="logo"><p>TuComida</p></div>
                 </div>
                 <div class="card-content">
@@ -284,9 +1985,9 @@
                 <div class="card-content">
                   <h5 class="subtitle-5">Promoción</h5>
                   <h3 class="subtitle-3">
-                    ¡En la compra de dos Big Mac <br/>
-                    obten una hamburguesa sencilla gratis!<br/>
-                    💥<br/>
+                    ¡En la compra de dos Big Mac <br />
+                    obten una hamburguesa sencilla gratis!<br />
+                    💥<br />
                   </h3>
                   <div class="card-info">
                     <svg
@@ -352,7 +2053,8 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="button"
+                  <button
+                    type="button"
                     onclick="window.location.href='{{url_for('pages.contac')}}';"
                     class="btn btn-primary expanded"
                   >
@@ -365,7 +2067,7 @@
         </article>
       </div>
     </section>
-    {% block scripts %}
-    {% endblock %}
+    {% block scripts %} {% endblock %}
   </body>
   {% endblock %}
+  

@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: rgba(239, 166, 81, 1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    margin: 2px 0;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar button {
+    background-color: rgba(239, 166, 81, 1);
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 100px;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+/* Perfil del restaurante */
+.restaurant-profile {
+    margin: 20px;
+}
+
+.cover-photo {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.cover-photo {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.cover-photo img {
+    width: 100%;
+}
+
+.profile-photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #025157;
+    border-radius: 50%;
+}
+
+.container {
+    margin: 20px auto;
+    overflow: hidden;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.dish-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-top: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+}
+
+.dish-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.dish-image img {
+    width: 400px;
+    height: auto;
+    display: block;
+    padding-left: 90px;
+}
+
+.dish-details {
+    flex: 1;
+    padding: 20px; /* Ajustado el padding para mejorar la apariencia */
+    padding-right: 90px;
+    text-align: justify;
+}
+
+.dish-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dish-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.dish-price-container {
+    background-color: #025157; /* Fondo azul */
+    color: #fff; /* Letra blanca */
+    border-radius: 8px; /* Radio de borde */
+    padding: 10px; /* Espaciado interno */
+    width: 65px;
+}
+
+.dish-price {
+    font-size: 18px;
+    color: #fff; /* Letra blanca */
+}
+
+.comments-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-impar {
+    border: 1px solid #05c5d3;
+    background-color: rgb(255, 255, 255)25;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 800px;
+}
+
+.comment-par {
+    border: 1px solid #74bcff;
+    background-color: #ffffff21;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 800px;
+}
+
+.user-info {
+    font-weight: bold;
+}
+
+.rating {
+    color: rgba(239, 166, 81, 1); /* Azul para destacar la calificación */
+    font-weight: bold;
+}
+
+.comment-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-form-container {
+    margin-top: 20px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.comment-form-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form-container label {
+    margin-top: 10px;
+}
+
+.comment-form-container textarea {
+    resize: vertical;
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 500px;
+    border: 1px solid #132b359c;
+}
+
+.comment-form-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 80px;
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+.comment-form-container button:hover {
+    background-color: #228cfd;
+}
+
+#username {
+    border-radius: 8px;
+    width: 500px;
+}
+
+#rating {
+    border-radius: 8px;
+    border: 1px solid #2e2e2e;
+    width: 500px;
+}

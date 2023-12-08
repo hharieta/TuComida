@@ -1,7 +1,9 @@
 
 
 .categorias {
-    margin: 100px 10px 80px 10px;
+    margin: 100px 10px 20px 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
 }
 
 .categorias-scroll {
@@ -57,6 +59,7 @@
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+    border-radius: 10px;
 }
 
 .categorias-1j3lhdz {
@@ -163,16 +166,12 @@
 }
 
 .restaurantes {
-    padding: 35px;
     display: flex;
     flex-wrap: wrap;
-    gap: 35px;
     justify-content: space-around;
 }
 
 .restaurante {
-    width: 240px;
-    height: 340px;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 0;
@@ -187,17 +186,38 @@
 .restaurante img {
     object-fit: cover;
     width: 240px;
-    height: 175px ;
+    height: 175px;
     width: 100%;
 }
+
 
 .btn-restaurate {
     background-color: rgba(239, 166, 81, 1); 
     border-color: rgba(239, 166, 81, 1);
 }
+.btn.btn-primary {
+    border: solid 1px var(--first-color-light);
+    color: #fffbf7;
+    font-weight: 600;
+    background-color: var(--first-color-light);
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--first-color);
+    cursor: pointer;
+}
+.btn.btn-primary:focus {
+box-shadow: 0 0 0 1px var(--first-color);
+}
+.btn.btn-primary:active {
+background-color: var(--first-color);
+}
 
 .restaurante button:hover {
-    background-color: #ff7700;
+    background-color: var(--first-color);
+    border-color: var(--first-color);
 }
 .search-bar button:hover {
     background-color: rgb(255, 255, 255);
@@ -209,6 +229,91 @@
     transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave */
 }
 .restaurante:hover {
-    background-color: #f1f1f1; /* Cambia el color de fondo */
+    box-shadow: 3px 3px 5px #f0f0f0; /* Agrega sombreado */
+    transform: scale(1.05);
+}
+
+section {
+    padding: 10px;
+    text-align: center;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.menu-item {
+    flex: 0 0 calc(33.3% - 4rem);
+    margin: 2rem;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
     box-shadow: 3px 3px 5px #f0f0f0; /* Agrega sombreado */
 }
+
+.menu-item img {
+    height: 250px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.menu-item span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.restaurantes {
+    display: flex;
+    overflow-x: hidden;
+  }
+
+  .restaurante {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: 225px;
+    height: 386px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  @media screen and (max-width:800px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    .restaurantes {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+  @media screen and (max-width:1024px){
+    .menu-item {
+        margin: 1rem;
+    }
+    .menu-item img {
+        height: 200px;
+    }
+  }
+
+  @media screen and (min-width:1024px){
+  }

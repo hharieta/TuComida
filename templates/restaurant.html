@@ -1,24 +1,20 @@
 {% extends './base.html' %}
 
-{% block title %}TuComida - {{ super() }}{% endblock %}
+{% block title %}
+  TuComida - {{ super() }}
+{% endblock %}
 
 {% block customCSS %}
-  <link rel="stylesheet" href="{{url_for('static', filename='css/restaurant.css')}}" />
-
+  <link rel="stylesheet" href="{{url_for('static', filename='css/restaurant.css')}}">
 {% endblock %}
+
 {% block content %}
   <body>
     <div class="restaurant-profile">
       <div class="cover-photo">
-        <img
-          src="https://elceo.com/wp-content/uploads/2023/08/%C2%BFQuien-es-el-dueno-de-Burger-King-.jpg"
-          alt="Portada del restaurante"
-        />
+        <img src="https://elceo.com/wp-content/uploads/2023/08/%C2%BFQuien-es-el-dueno-de-Burger-King-.jpg" alt="Portada del restaurante" />
         <div class="profile-photo">
-          <img
-            src="https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png"
-            alt="Foto de perfil del restaurante"
-          />
+          <img src="https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png" alt="Foto de perfil del restaurante" />
         </div>
       </div>
       <h3>Burger King Nichúpte</h3>
@@ -29,10 +25,7 @@
       </div>
 
       <h3>Menús</h3>
-      <div
-        class="menu-categories"
-        style="position: relative; left: 25%; right: 25%"
-      >
+      <div class="menu-categories" style="position: relative; left: 25%; right: 25%">
         <div class="category" id="all-tab">
           <h4>Todos</h4>
         </div>
@@ -55,47 +48,49 @@
       <h5>Hamburguesas</h5>
       <div class="menu-items">
         <div class="menu-item">
-          <img
-            src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop"
-            alt="Hamburguesa 1"
-          />
-          <div class="item-details">
-            <h4>Hamburguesa Clásica</h4>
-            <p>
-              Una hamburguesa deliciosa con todos los ingredientes clásicos.
-            </p>
-          </div>
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop" alt="Hamburguesa 1" />
+              <div class="item-details-text">
+                <h4>Hamburguesa Clásica</h4>
+                <p>Una hamburguesa deliciosa con todos los ingredientes clásicos.</p>
+              </div>
+            </div>
+          </a>
         </div>
         <!-- Agrega más opciones de hamburguesas aquí -->
         <div class="menu-item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEnfLmuOugf84c3iVMqaKu8j51yNYgLjjg&usqp=CAU"
-            alt="Whopper"
-          />
-          <div class="item-details">
-            <h4>Whopper</h4>
-            <p>Otra deliciosa hamburguesa especial.</p>
-          </div>
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEnfLmuOugf84c3iVMqaKu8j51yNYgLjjg&usqp=CAU" alt="Whopper" />
+              <div class="item-details-text">
+                <h4>Whopper</h4>
+                <p>Otra deliciosa hamburguesa especial.</p>
+              </div>
+            </div>
+          </a>
         </div>
         <div class="menu-item">
-          <img
-            src="https://burgerkingec.com/wp-content/uploads/2020/05/whopper-jr-item-grid.png"
-            alt="Whopper Jr"
-          />
-          <div class="item-details">
-            <h4>Whopper Jr</h4>
-            <p>Otra deliciosa hamburguesa especial más.</p>
-          </div>
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="https://burgerkingec.com/wp-content/uploads/2020/05/whopper-jr-item-grid.png" alt="Whopper Jr" />
+              <div class="item-details-text">
+                <h4>Whopper Jr</h4>
+                <p>Otra deliciosa hamburguesa especial más.</p>
+              </div>
+            </div>
+          </a>
         </div>
         <div class="menu-item">
-          <img
-            src="https://burgerkingec.com/wp-content/uploads/2020/05/King-de-Pollo.png"
-            alt="King de pollo"
-          />
-          <div class="item-details">
-            <h4>King de pollo</h4>
-            <p>Otra deliciosa hamburguesa especial.</p>
-          </div>
+          <a href="{{url_for('pages.plato')}}">
+            <div class="item-details">
+              <img src="https://burgerkingec.com/wp-content/uploads/2020/05/King-de-Pollo.png" alt="King de pollo" />
+              <div class="item-details-text">
+                <h4>King de pollo</h4>
+                <p>Otra deliciosa hamburguesa especial.</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -104,36 +99,27 @@
       <h5>Nuggets</h5>
       <div class="menu-items">
         <div class="menu-item">
-          <img
-            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
-            alt="Nuggets 1"
-          />
-          <div class="item-details">
-            <h4>Nuggets de Pollo</h4>
-            <p>Nuggets de pollo crujientes y deliciosos.</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img
-            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
-            alt="Nuggets 1"
-          />
-          <div class="item-details">
-            <h4>Nuggets de Pollo</h4>
-            <p>Nuggets de pollo crujientes y deliciosos.</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img
-            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
-            alt="Nuggets 1"
-          />
+          <img src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off" alt="Nuggets 1" />
           <div class="item-details">
             <h4>Nuggets de Pollo</h4>
             <p>Nuggets de pollo crujientes y deliciosos.</p>
           </div>
         </div>
         <!-- Agrega más opciones de nuggets aquí -->
+        <div class="menu-item">
+          <img src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off" alt="Nuggets 1" />
+          <div class="item-details">
+            <h4>Nuggets de Pollo</h4>
+            <p>Nuggets de pollo crujientes y deliciosos.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off" alt="Nuggets 1" />
+          <div class="item-details">
+            <h4>Nuggets de Pollo</h4>
+            <p>Nuggets de pollo crujientes y deliciosos.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -141,76 +127,56 @@
       <h5>Ensaladas</h5>
       <div class="menu-items">
         <div class="menu-item">
-          <img
-            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
-            alt="Ensalada 1"
-          />
+          <img src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format" alt="Ensalada 1" />
+          <div class="item-details">
+            <h4>Ensalada César</h4>
+            <p>Una ensalada fresca con aderezo césar.</p>
+          </div>
+        </div>
+        <!-- Agrega más opciones de ensaladas aquí -->
+        <div class="menu-item">
+          <img src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format" alt="Ensalada 1" />
           <div class="item-details">
             <h4>Ensalada César</h4>
             <p>Una ensalada fresca con aderezo césar.</p>
           </div>
         </div>
         <div class="menu-item">
-          <img
-            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
-            alt="Ensalada 1"
-          />
-          <div class="item-details">
-            <h4>Ensalada César</h4>
-            <p>Una ensalada fresca con aderezo césar.</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img
-            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
-            alt="Ensalada 1"
-          />
-          <div class="item-details">
-            <h4>Ensalada César</h4>
-            <p>Una ensalada fresca con aderezo césar.</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img
-            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
-            alt="Ensalada 1"
-          />
+          <img src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format" alt="Ensalada 1" />
           <div class="item-details">
             <h4>Ensalada César</h4>
             <p>Una ensalada fresca con aderezo césar.</p>
           </div>
         </div>
       </div>
-      <!-- Agrega más opciones de ensaladas aquí -->
     </div>
-    <br />
+
     <!-- Nuevo div con ubicación geográfica y detalles -->
     <div class="location-details">
       <iframe
         class="map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14885.182985745241!2d-86.85111676838426!3d21.140625540974227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2964014c6efb%3A0x882019837896c08!2sBurger%20King!5e0!3m2!1ses-419!2smx!4v1699561854991!5m2!1ses-419!2smx"
-        width="300"
-        height="300"
+        width="auto"
+        height="auto"
         style="border: 0"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div style="padding-left: 1rem; padding-top: 2rem;">
+      <div style="padding-left: 1rem; padding-top: 2rem">
         <h3>Ubicación</h3>
         <p>Dirección: Av. Ejemplo 123, Ciudad Ejemplo</p>
         <p>Teléfono: +123 456 789</p>
         <p>Horario: Lunes a Domingo, 10:00 AM - 10:00 PM</p>
         <p>
-          Sobre la esquina de la gran plaza, frente a una casa blanca, sobre la
-          Av. Nichupté y Calle Nichupté
+          Sobre la esquina de la gran plaza, frente a una casa blanca, sobre la Av. Nichupté y Calle Nichupté
         </p>
       </div>
     </div>
-    {% block scripts %}
+  </body>
+
+  {% block scripts %}
     <script src="{{url_for('static', filename='scripts/restaurant.js')}}"></script>
     {{ super() }}
-    {% endblock %}
-  </body>
   {% endblock %}
-
+{% endblock %}

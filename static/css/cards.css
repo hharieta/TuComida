@@ -9,6 +9,17 @@
       opacity: 1;
     }
   }
+
+  .banner-title {
+    font-size: 4.5em; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-bottom: -15px; /* Ajusta el margen inferior según tus preferencias */
+    margin-top: -180px;
+  }
+  
+  .banner-description {
+    font-size: 1.5em; /* Ajusta el tamaño de fuente según tus preferencias */
+    margin-bottom: 20px; /* Ajusta el margen inferior según tus preferencias */
+  }
   
   .fadeIn {
     animation-name: fadeIn;
@@ -19,7 +30,7 @@
   }
   
   .title {
-    font-size: 40px;
+    font-size: 20px;
     color: #025157;
     margin-bottom: 12px;
   }
@@ -91,22 +102,22 @@
     border-top: none;
   }
   .btn.btn-primary {
-    border: solid 1px #025157;
+    border: solid 1px var(--first-color-light);
     color: #fffbf7;
     font-weight: 600;
-    background-color: #025157;
+    background-color: var(--first-color-light);
     border-radius: 5px;
     padding: 8px 16px;
   }
   .btn.btn-primary:hover {
-    background-color: #025157ec;
+    background-color: var(--first-color);
     cursor: pointer;
   }
   .btn.btn-primary:focus {
-    box-shadow: 0 0 0 1px #02515798;
+    box-shadow: 0 0 0 1px var(--first-color);
   }
   .btn.btn-primary:active {
-    background-color: #025157e2;
+    background-color: var(--first-color);
   }
   .btn.expanded {
     width: 100%;
@@ -163,3 +174,46 @@
     background: #025157;
     border-color: #025157;
   }
+
+  header {
+    text-align: center;
+}
+
+.search-container {
+    margin: 0;
+    width: 100%;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    max-width: 400px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    background: var(--first-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--first-color-light);
+}
+
+.fa-search {
+    margin-right: 5px;
+}
