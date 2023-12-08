@@ -8,6 +8,7 @@ class SearchSaucer():
     def read_like(cls, tag):
         saucer = "%{}%".format(tag)
         posts = Saucer.query.filter(Saucer.saucer_name.ilike(saucer)).all()
-        print(posts)
-
-        return saucers_schema.dump(posts), 201
+        
+        if posts: 
+            return saucers_schema.dump(posts)
+        return None

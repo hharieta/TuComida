@@ -98,8 +98,9 @@
                   <a class="nav-link disabled">Disabled</a>
                 </li> -->
           </ul>
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+          <form method="POST" action="{{url_for('searchs.searchsaucer')}}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <input type="search" id="search" name="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
           </form>
           <div class="actions">
             <a href="{{url_for('pages.login')}}" class="actions-btn">Iniciar sesión</a>

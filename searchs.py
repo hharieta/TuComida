@@ -10,8 +10,6 @@ def searchsaucer():
         tag = request.form['search']
 
         result = SearchSaucer.read_like(tag)
-        print(result)
-
         return render_template('searchsaucer.html', data = result, searched = tag)
 
-    return redirect(url_for('pages.login'))
+    return redirect(url_for('/'))

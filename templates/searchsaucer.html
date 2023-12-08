@@ -7,31 +7,39 @@ href="{{ url_for('static', filename='css/Menu.css') }}"
 />
 <link
 rel="stylesheet"
+href="{{ url_for('static', filename='css/search-items.css') }}"
+/>
+<link
+rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
 {% endblock %} 
 
 {% block content %}
 {% if (data) %}
-    <section id="results">
-        <h4>Resultados</h4>
-        {% for item in data[0] %}
-        <div class="menu-item">
+    <h4 style="text-align: center; margin-top: 15rem;">Resultados</h4>
+    <section class="container__section" id="results">
+        {% for item in data %}
+        <div class="menu-item container__items">
         <img
-            src="{{item.url_image}}"
+            src="{{item['url_image']}}"
             alt="Imagen del Plato 1"
         />
-        <span>{{item.saucer_name}}</span>
-        <span>${{item.price}}</span>
-        <span>{{item.description}}</span>
+        <p>{{item['saucer_name']}}</p>
+        <p>${{item['price']}}</p>
+        <p>{{item['description']}}</p>
         </div>
         {% endfor%}
         <!-- Agrega más elementos según sea necesario -->
     </section>
 {% else %}
-    <p>No hay resultados para la busqueda:
-        <strong class="menu-item"> {{ searched }}</strong>
-    </p>
+<h4 style="text-align: center; margin-top: 15rem;margin-bottom: 5rem;">Resultados</h4>
+<section class="container__section" id="results">
+    <div class="container__non">
+    <p>No hay resultados para la busqueda: </p>
+    <p><strong class="menu-item"> {{ searched }}</strong></p>
+    </div>
+</section>
 {% endif %}
 
 {% endblock %}
