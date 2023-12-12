@@ -1,0 +1,710 @@
+
+/* 
+:root {
+	--header-height: 4rem;
+	--first-color: rgba(248, 191, 106);
+	--first-color-light: rgba(239, 166, 81);
+
+	--second-color: rgb(247,220,183);
+	--second-color-light: rgb(248,228,187);
+
+	--third-color: rgba(28, 133, 127);
+
+	--title-color: #212529;
+	--text-color: #343a40;
+	--text-color-light: #6c757d;
+
+	--bg-color: #f8f9fa;
+	--bg-color-alt: #eff1f3;
+
+	--color-white: #fff;
+} */
+
+#editar-horario {
+    position: absolute; 
+    right: 37%;
+    height: 35px;
+    width: 35px;
+    margin: 10px 0;
+}
+
+#editar-banner {
+    position: absolute;
+    right: 2%;
+    height: 35px;
+    width: 35px;
+    margin: 10px 0;
+}
+
+
+/* Perfil del restaurante */
+.restaurante {
+    margin: 20px;
+}
+
+.btn-primary {
+    background-color: rgba(239, 166, 81, 1);
+    border-color: rgba(239, 166, 81, 1);;
+}
+
+.restaurant-profile {
+    margin-top: 5rem;
+    align-items: center;
+    text-align: center; /*arriba/abajo*/
+}
+
+.cover-photo {
+    position: relative;
+    height: 18.5rem;
+    overflow: hidden;
+    padding-bottom: 4rem;
+    border-radius: 2rem;
+}
+
+
+.cover-photo img {
+    width: 100%;
+}
+
+.profile-photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+}
+
+/***LABEL Perfil***/
+
+#profile-photo-label {
+    cursor: pointer;
+}
+
+#profile-photo-btn {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #025157;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #025157;
+    border-radius: 50%;
+}
+
+.menu-options{
+    text-align: center;
+}
+
+.menu-categories {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(221, 221, 221);
+    border-radius: 30px;
+}
+
+.category {
+    cursor: pointer;
+    flex: 1;
+    padding: 0px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Estilo para las pestañas de categoría */
+#adults-tab {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#healthy-tab {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.category.active {
+    background-color: #025157;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.category:not(.active) {
+    color: #025157;
+}
+
+.category-content {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu-item {
+    display: flex;
+    height: 150px;
+    width: 430px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Agregar borde */
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Transición de color */
+}
+
+.menu-item img {
+    padding: 10px;
+    padding-top: 15px;
+    width: 120px;
+    height: 120px;
+}
+
+.menu-item:hover {
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+/* Estilos para el horario del restaurante */
+.restaurant-hours {
+    text-align: center;
+    margin-top: 20px;
+/*    background-color: #c9c9c9; */
+    padding: 10px;
+/*    border-bottom-left-radius: 30px; */
+/*    border-bottom-right-radius: 30px; */
+}
+
+.restaurant-hours h4 {
+    color: #025157;
+}
+
+.restaurant-hours p {
+    margin: 5px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.map {
+    border-radius: 30px;
+    width: 100px;
+}
+
+.location-details {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #333;
+    padding: 20px;
+}
+
+.location-details iframe,
+        .location-details div {
+            width: 50%; /* Se ajusta el ancho para dejar espacio para los márgenes y bordes */
+        }
+
+.h3ubicacion {
+    padding: 20px;
+}
+
+.location-details h3{
+    color: #ffffff;
+}
+
+.location-details p {
+    color: #cacaca;
+}
+
+@media (max-width: 914px) {
+	.location-details {
+		padding: 0;
+        flex-direction: column;
+	}
+    .location-details iframe, .location-details div {
+        width: 100%;
+        border-radius: 0.4rem;
+	}
+
+    .cover-photo {
+        height: auto;
+        border-radius: 0;
+    }
+    .menu-categories {
+        flex-direction: column;
+        background: var(--bg-color);
+    }
+    .category.active {
+        background-color: #025157;
+        color: #ffffff;
+        border-radius: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+	.location-details {
+		padding: 2rem;
+        flex-direction: column;
+	}
+    .location-details iframe, .location-details div {
+        width: 100%;
+        border-radius: 0.4rem;
+	}
+    .cover-photo {
+        border-radius: 0;
+        height: auto;
+    }
+    .menu-categories {
+        flex-direction: column;
+        background: var(--bg-color);
+    }
+    .category.active {
+        background-color: #025157;
+        color: #ffffff;
+        border-radius: 30px;
+        width: 50%;
+    }
+}
+
+.item-details h4 {
+
+        margin-block-start: 1.33em;
+        margin-block-end: 0.33em;
+
+
+}
+
+
+/***Modals*****/
+/****HORARIO*****/
+
+#Modal3 {
+	/**width: 300px; "opacidad"**/
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+	
+}
+#Modal3:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+/**texto**/
+#Modal3 h1 {
+	color: white;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#Modal3 > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 70px 40px 70px 40px; /* alto, 90,40, 25,90 ancho**/
+	border-radius: 10px;
+	background:  rgba(239, 166, 81);
+  -webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+}
+
+/**diseño cerrar**/
+#Modal3 .close {
+	background: #ef0101;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+#Modal3 .close:hover { background: #00d9ff; }
+/**diseño modal**/
+#Modal3 >div input[type="button"] {
+
+	text-decoration: rgb(80, 33, 33);
+	color: rgb(255, 255, 255);
+	background-color: orange;
+	padding: 1em 3em;
+	border: 1px solid;
+	border-radius: 6px;
+	display: inline-block;
+	font-weight: 300;
+	transition: background-color .3s;
+
+}
+/**transicion mouse**/
+#Modal3 >div input[type="button"]:hover {
+	color:black;
+	background-color: white;
+}
+
+#Modal3 > div input[type="file"] {
+	margin-bottom: 20px;
+}
+
+
+
+#Modal3 .contenedor {
+	max-width: 100%;
+	margin: auto;
+}
+
+#Modal3 .contenedor .checkbox {
+	width: auto;
+}
+
+#Modal3 .contenedor .checkbox ul{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+
+}
+
+#Modal3 .contenedor .checkbox ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+#Modal3 .contenedor .checkbox ul li label {
+	display:  inline-block;
+	background: #ef0101;
+	border: 1px solid white;
+	color: white;
+	border-radius: 25px;
+	transition: .2s all ease;
+	padding: 8px 12px;
+}
+#Modal3 .contenedor .checkbox ul li label:hover {
+	border: 1px solid black;
+}
+
+#Modal3 .contenedor .checkbox ul li input[type="checkbox"]:checked + label {
+	border: 1px solid white;
+	background: white;
+	color: aquamarine;
+}
+
+#Modal3 .contenedor .checkbox ul li input[type="checkbox"] {
+	opacity: 0;
+}
+
+
+/***mODAL1***/
+/****categorias*****/
+
+#Modal1 {
+	/**width: 300px; "opacidad"**/
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+#Modal1:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+/**texto**/
+#Modal1 h1 {
+	color: white;
+	font-family: 'Pacifico', cursive;
+}
+#Modal1 > div {
+    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	position: relative;
+	margin: 10% auto;
+	padding: 70px 100px 70px 100px; /* alto, 90,40, 25,90 ancho**/
+	border-radius: 10px;
+	background:  rgba(239, 166, 81);
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+/**aqui iba imagen review**/
+
+/**diseño cerrar**/
+#Modal1 .close {
+	background: #ef0101;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+#Modal1 .close:hover { 
+    background: #ffffff;
+    color: #ef0101; 
+}
+
+/**diseño modal**/
+
+#Modal1 >div input[type="button"] {
+   /** text-align: center;**/
+	text-decoration: rgb(80, 33, 33);
+	color: rgb(248, 248, 248);
+	background-color: orange;
+	padding: 1em 3em;
+	border: 1px solid;
+	border-radius: 6px;
+	display: inline-block;
+	font-weight: 300;
+	transition: background-color .3s;
+
+}
+/**transicion mouse**/
+#Modal1 >div input[type="button"]:hover {
+	color:black;
+	background-color: white;
+}
+
+#Modal1>div input[type="file"] {
+	margin-bottom: 20px;
+}
+
+/** CATEGORIAS*********************/
+#Modal1 .contenedor {
+	max-width: 100%;
+	margin: auto;
+    overflow: hidden;
+}
+
+#Modal1 .contenedor .checkbox {
+	width: auto;
+    overflow: hidden;
+}
+
+#Modal1 .contenedor .checkbox ul{
+	list-style: none;
+	display: flex;
+	justify-content: flex-start; /**horizo***/
+	align-items:center; /**arriba/abajo**/
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+#Modal1 .contenedor .checkbox ul li {
+	display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#Modal1 .contenedor .checkbox ul li label {
+	/**display:  inline-block;**/
+    display:flex;
+	background:  rgba(239, 166, 81);
+	border: 1px solid white;
+	color: white;
+	border-radius: 10px;
+	transition: .2s all ease;
+	padding: 5px 15px;
+}
+#Modal1 .contenedor .checkbox ul li label:hover {
+	border: 1px solid black;
+}
+
+#Modal1 .contenedor .checkbox ul li input[type="checkbox"]:checked + label {
+	border: 1px solid white;
+	background: white;
+	color: rgb(0, 0, 0);
+}
+
+#Modal1 .contenedor .checkbox ul li input[type="checkbox"] {
+	opacity: 0;
+
+}
+
+/*** MODAL 5 ***********/
+
+#Modal5 {
+	/**width: 300px; "opacidad"**/
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+#Modal5:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+#Modal5 > div {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10em;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#Modal5 .Modaltitulo {
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#Modal5 .modalContent {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(239, 166, 81);
+}
+
+#Modal5  .left-half,
+#Modal5 .right-half {
+    flex: 1;
+    padding: 20px;
+}
+
+#Modal5 .left-half {
+    background: rgba(239, 166, 81);
+}
+
+#Modal5  .right-half {
+    background: rgba(239, 166, 81);
+}
+
+#referencias { /**ALGUIEN AJUSTE BIEN ESTE FORM**/
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+}
+#enviar {
+    margin-top: 2em;
+}
+#Modal5>form {
+    padding-bottom: 20px;
+}
+
+#Modal5>input[type="file"] {
+    margin-bottom: 10px;
+}
+
+#Modal5>label {
+    display: inline-block;
+    width: auto;
+}
+#Modal5 .Modaltitulo {
+    background-color: rgba(239, 166, 81); 
+}
+
+#Modal5 .modalTitle {
+    color: white; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#Modal5 >div input[type="button"] {
+
+	text-decoration: rgb(80, 33, 33);
+	color: rgb(255, 255, 255);
+	background-color: orange;
+	padding: 1em 3em;
+	border: 1px solid;
+	border-radius: 6px;
+	display: inline-block;
+	font-weight: 300;
+	transition: background-color .3s;
+}
+#Modal5 >div input[type="button"]:hover {
+	color:black;
+	background-color: white;
+}
+#Modal5 .close {
+    background: #ef0101;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 130px; 
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
