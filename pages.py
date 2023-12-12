@@ -105,9 +105,9 @@ def contac():
 def about():
     return render_template('about.html')
 
-@pages_bp.route('/filos')
+@pages_bp.route('/perfilrestaurante')
 def filos():
-    return render_template('filos.html')
+    return render_template('perfilrestaurante.html')
 
 @pages_bp.route('/ofertas')
 def ofertas():
