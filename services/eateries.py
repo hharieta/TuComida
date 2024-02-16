@@ -11,3 +11,13 @@ class SearchEatery():
         if eatery:
             return eatery_schema.dump(eatery)
         return None
+    
+    @classmethod
+    def eatery_by_name(cls, name):
+        name.lower()
+        eatery = "%{}%".format(name)
+        eatery = Eatery.query.filter(Eatery.eatery_name.ilike(eatery)).first()
+        
+        if eatery:
+            return eatery_schema.dump(eatery)
+        return None

@@ -7,7 +7,7 @@ class User(db.Model):
     names = db.Column(db.String(64))
     surname = db.Column(db.String(64))
     email = db.Column(db.String(32), unique=True)
-    password = db.Column(db.String(32), nullable=False)
+    password = db.Column(db.String(162), nullable=False)
     datebirth = db.Column(db.String(32))
 
 

@@ -21,3 +21,14 @@ def eatery():
     if id_eatery:
         eatery_data = SearchEatery.eatery_by_id(int(id_eatery))
     return render_template('eatery.html', eatery=eatery_data)
+
+# TODO: Implement the a search for eateries and saucers 
+@search_bp.route('/searchall',  methods=['GET','POST'])
+def searchall():
+    if request.method == 'POST':
+        search_query = request.form['search']
+        saucer_results = SearchSaucer.read_like(search_query)
+        eatery_results = SearchEatery.eatery_by_name(search_query)
+        return render_template('search_results.html', saucers=saucer_results, eateries=eatery_results, searched=search_query)
+    
+    return redirect(url_for('/')) 
