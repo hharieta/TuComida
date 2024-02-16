@@ -1,0 +1,368 @@
+{% extends './base.html' %}
+
+{% block title %}TuComida - {{ super() }}{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/perfilrestaurante.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/ofertas.css')}}" />
+{% endblock %} {% block content %}
+  <body>
+    <div class="restaurant-profile">
+      <div class="cover-photo">
+        <img
+          src="https://elceo.com/wp-content/uploads/2023/08/%C2%BFQuien-es-el-dueno-de-Burger-King-.jpg"
+          alt="Portada del restaurante"
+        />
+        <div class="profile-photo"id="profile-photo-container">
+          <label for="profile-photo-input" id="profile-photo-label">
+             <!-- <img src="https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png" alt="Foto de perfil" id="profile-photo-btn"> -->
+              <img src="imagenes/WhatsApp Image 2022-09-07 at 9.37.13 PM.jpeg" id="foto" 
+         onmouseover="this.src='https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png';"
+         onmouseout="this.src='https://1.bp.blogspot.com/-AeA1S8sWfN4/Wy-Y656fAbI/AAAAAAAAJeM/UQg5iOYo40kkMZ6Gx4g2vAsoSbvlIEvbgCLcBGAs/s1600/messi%2Bdios.jpg';">
+          </label>
+          <input type="file" id="profile-photo-input" accept="image/*" style="display: none">
+      <!---
+          <img src="https://www.mygwork.com/media/cache/profile_preview/rc/IY6ZobTm/uploads/images/3a/0c/3a0cb7624ccc420ddd699c9aeb7c5e7fdb14a5f1.png" alt="Foto de perfil del restaurante"> --->
+        </div>
+      </div>
+      <h3>Burger King Nichúpte</h3>
+      <div class="restaurant-hours">
+        <h4>Horario del Restaurante</h4>
+        <button onclick="openModal('Modal3')">
+        <img src="static/img/editar.png" alt="lapicito" id="editar-horario">
+      </button><!--Modal3-->
+      <div id="Modal3" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close" data-modal="Modal3">X</a>
+            <h1>Actualiza tu horario</h1>
+            <div>
+            <form>
+            <label for="hora">Lunes a Viernes:</label>
+            <input type="time" id="hora" name="hora"> <br>
+            <label for="hora">Hora de cierre:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="time" id="hora" name="hora">
+            </form>
+            <!--no supe mover en css el boton de enviar asi que mejor puse en brrr aqui pues-->
+            <br>
+            </div>
+            <input type="button" value="Enviar" onclick="submitAndCloseModal('Modal3')">
+        </div>
+    </div>
+      <!--TERMINA Modal3-->
+        <p>Lunes a Viernes: 10:00 AM - 10:00 PM</p>
+        <p>Sábado y Domingo: 11:00 AM - 9:00 PM</p>
+      </div>
+
+      <h3>Menús</h3>
+      <div
+        class="menu-categories"
+        style="position: relative; left: 25%; right: 25%"
+      >
+        <div class="category" id="all-tab">
+          <h4>Todos</h4>
+        </div>
+        <div class="category" id="adults-tab">
+          <h4>Adultos</h4>
+        </div>
+        <div class="category" id="kids-tab">
+          <h4>Niños</h4>
+        </div>
+        <div class="category" id="healthy-tab">
+          <h4>Saludable</h4>
+        </div>
+        <button class="category" id="more-tab" onclick="openModal('Modal1')">
+            <h4>+</h4> </button>
+            <div id="Modal1" class="modalDialog">
+              <div>
+                  <a href="#close" title="Close" class="close" data-modal="Modal1">X</a>
+                  <h1>    Agregar Categorias</h1>
+                      <div class="contenedor">
+                          <div class="checkbox">
+                          <ul>
+                              <li><input type="checkbox" name=" check1" id="check1"><label for="check1">Comida mexicana</label></li>
+                              <li><input type="checkbox" name=" check2" id="check2"><label for="check2">Tortas</label></li>
+                              <li><input type="checkbox" name=" check3" id="check3"><label for="check3">Hamburguesas</label></li>
+                              <li><input type="checkbox" name=" check4" id="check4"><label for="check4">Desayunos</label></li>
+                              <li><input type="checkbox" name=" check5" id="check5"><label for="check5">Pastas</label></li>
+                              <li><input type="checkbox" name=" check6" id="check6"><label for="check6">Pasteles</label></li>
+                              <li><input type="checkbox" name=" check7" id="check7"><label for="check7">Postres</label></li>
+                              <li><input type="checkbox" name=" check8" id="check8"><label for="check8">Light</label></li>
+                              <li><input type="checkbox" name=" check10" id="check10"><label for="check10">Niños</label></li><li>
+                              <li><input type="checkbox" name=" check9" id="check9"><label for="check9">Cero Azucar</label></li>
+                           </ul>
+                          </div>      
+                  <input type="button" value="Guardar" onclick="submitAndCloseModal('Modal1')">
+                  </div>
+              </div>   
+          </div> 
+            <!---Modal1-->
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-options">
+      <div class="category-content" id="all-content"></div>
+    </div>
+    <div class="category-content" id="adults-content">
+      <h5>Hamburguesas</h5>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img
+            src="https://s7d1.scene7.com/is/image/mcdonalds/202201_3426-005_DoubleQuarterPounderwithCheese_832x472:1-4-product-tile-desktop"
+            alt="Hamburguesa 1"
+          />
+          <div class="item-details">
+            <h4>Hamburguesa Clásica</h4>
+            <p>
+              Una hamburguesa deliciosa con todos los ingredientes clásicos.
+            </p>
+          </div>
+        </div>
+        <!-- Agrega más opciones de hamburguesas aquí -->
+        <div class="menu-item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIEnfLmuOugf84c3iVMqaKu8j51yNYgLjjg&usqp=CAU"
+            alt="Whopper"
+          />
+          <div class="item-details">
+            <h4>Whopper</h4>
+            <p>Otra deliciosa hamburguesa especial.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://burgerkingec.com/wp-content/uploads/2020/05/whopper-jr-item-grid.png"
+            alt="Whopper Jr"
+          />
+          <div class="item-details">
+            <h4>Whopper Jr</h4>
+            <p>Otra deliciosa hamburguesa especial más.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://burgerkingec.com/wp-content/uploads/2020/05/King-de-Pollo.png"
+            alt="King de pollo"
+          />
+          <div class="item-details">
+            <h4>King de pollo</h4>
+            <p>Otra deliciosa hamburguesa especial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-content" id="kids-content">
+      <h5>Nuggets</h5>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img
+            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
+            alt="Nuggets 1"
+          />
+          <div class="item-details">
+            <h4>Nuggets de Pollo</h4>
+            <p>Nuggets de pollo crujientes y deliciosos.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
+            alt="Nuggets 1"
+          />
+          <div class="item-details">
+            <h4>Nuggets de Pollo</h4>
+            <p>Nuggets de pollo crujientes y deliciosos.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
+            alt="Nuggets 1"
+          />
+          <div class="item-details">
+            <h4>Nuggets de Pollo</h4>
+            <p>Nuggets de pollo crujientes y deliciosos.</p>
+          </div>
+        </div>
+        <!-- Agrega más opciones de nuggets aquí -->
+      </div>
+    </div>
+
+    <div class="category-content" id="healthy-content">
+      <h5>Ensaladas</h5>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img
+            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
+            alt="Ensalada 1"
+          />
+          <div class="item-details">
+            <h4>Ensalada César</h4>
+            <p>Una ensalada fresca con aderezo césar.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
+            alt="Ensalada 1"
+          />
+          <div class="item-details">
+            <h4>Ensalada César</h4>
+            <p>Una ensalada fresca con aderezo césar.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
+            alt="Ensalada 1"
+          />
+          <div class="item-details">
+            <h4>Ensalada César</h4>
+            <p>Una ensalada fresca con aderezo césar.</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img
+            src="https://mcdonalds.es/api/cms/images/mcdonalds-es/75cc64e0-f3c4-413e-bd8b-a35981ff2cbf_producto-27.png?auto=compress,format"
+            alt="Ensalada 1"
+          />
+          <div class="item-details">
+            <h4>Ensalada César</h4>
+            <p>Una ensalada fresca con aderezo césar.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Agrega más opciones de ensaladas aquí -->
+    </div>
+    <br />
+
+    
+    <div class="container__flow">
+      <h1>Ofertas</h1>
+      <div class="container__ofertas">
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta1.jfif')}}" alt="Restaurante 1">
+              <h4>Pastelerìa Yaneth</h4>
+              <h5>-40% off</h5>
+              <p>¡Pasteles de chocolate a un super precio!</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta2.jpg')}}" alt="Restaurante 1">
+              <h4>McDonald´s</h4>
+              <h5>Happy Week</h5>
+              <p>-50% off en papas fritas grandes y Big Mac</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta3.jfif')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta4.jpg')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta5.jfif')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta6.jfif')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta7.jpg')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta8.jpg')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <div class="item">
+              <img src="{{url_for('static', filename='img/oferta8.jpg')}}" alt="Restaurante 1">
+              <h4>Nombre del Restaurante 2</h4>
+              <h5>Nombre de la Oferta 2</h5>
+              <p>Descripción de la oferta 2.</p>
+          </div>
+          <!-----
+          <div class="item">
+            <img src="{{url_for('static', filename='img/more.png')}}" alt="Restaurante 1">
+            <h4>Añadir Nueva Oferta</h4>
+            <h5></h5>
+            <p></p>
+        </div>-->
+        
+          <button class="item" id="more-tab" onclick="openModal('Modal5')"> 
+            <img src="{{url_for('static', filename='img/more.png')}}" alt="Restaurante 1">
+            <h4>Añadir Nueva Oferta</h4>
+            <h5></h5>
+            <p></p> </button>
+<!-- Modal -->
+<div id="Modal5" class="modalDialog">
+  <div>
+      <a href="#close" title="Close" class="close" data-modal="Modal5">x</a>
+      
+      <div class="Modaltitulo">
+          <h1>Comparte tu nueva promo</h1>
+          <div class="modalContent">
+              <div class="left-half">
+                  <form>
+                      <label for="file">Sube una imagen que muestre tu prodducto <br> puedes añadir precio o forma <br> de tu promocion.</label>
+                      <input type="File" name="archivo" accept=".jpg, .png">
+                  </form>
+              </div>  
+              <div class="right-half">
+                  <div id="twoform">
+                      <label for="referencias">Informacion breve de tu promocion:</label>                       
+                      <input type="text" id="referencias" name="referencias" placeholder="Ingresa texto">
+                      <div id="enviar"></div>
+                      <input type="button" value="Enviar" onclick="submitAndCloseModal('Modal5')">
+                  </div>
+              </div> 
+          </div>
+      </div>
+  </div>            
+</div> 
+
+        </div>
+  </div>
+    <!-- Nuevo div con ubicación geográfica y detalles -->
+    <div class="location-details">
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14885.182985745241!2d-86.85111676838426!3d21.140625540974227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2964014c6efb%3A0x882019837896c08!2sBurger%20King!5e0!3m2!1ses-419!2smx!4v1699561854991!5m2!1ses-419!2smx"
+        width="300"
+        height="300"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <div style="padding-left: 1rem; padding-top: 2rem;">
+        <h3>Ubicación</h3>
+        <p>Dirección: Av. Ejemplo 123, Ciudad Ejemplo</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Horario: Lunes a Domingo, 10:00 AM - 10:00 PM</p>
+        <p>
+          Sobre la esquina de la gran plaza, frente a una casa blanca, sobre la
+          Av. Nichupté y Calle Nichupté
+        </p>
+      </div>
+    </div>
+    {% block scripts %}
+    <script src="{{url_for('static', filename='scripts/restaurant.js')}}"></script>
+    {{ super() }}
+    {% endblock %}
+  </body>
+  {% endblock %}

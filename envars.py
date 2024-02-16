@@ -3,6 +3,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# verify if the environment is local or production
+# if local, the .env file will be loaded
+# otherwise production, the environment variables will be loaded
+# make sure to set the environment variables in the server
+if not os.environ.get("PRODUCTION"):
+    from dotenv import load_dotenv
+    load_dotenv()
 
 vars = {
         "POSTGRES_USERNAME" : os.environ["PS_USER"],

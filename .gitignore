@@ -2,6 +2,8 @@
 .vscode
 
 venv
+.env
+.env.*
 
 .env
 .env.*
@@ -9,3 +11,4 @@ __pycache__
 
 hash.py
 /templates/ubereats.html
+dt.py

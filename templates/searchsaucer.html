@@ -1,0 +1,48 @@
+{% extends './base.html' %} 
+{% block title %}TuComida - {{ super() }}{% endblock%} 
+{% block customCSS %}
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/Menu.css') }}"
+/>
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/search-items.css') }}"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+{% endblock %} 
+
+{% block content %}
+{% if (data) %}
+    <h4 style="text-align: center; margin-top: 15rem;">Resultados</h4>
+    <section class="container__section" id="results">
+        {% for item in data %}
+            <div class="menu-item container__items">
+            <a href="{{ url_for('searchs.eatery', id_eatery=item['eatery']['id_eatery']) }}">
+            <img
+                src="{{item['url_image']}}"
+                alt="Imagen del Plato 1"
+            />
+            <a href="{{ url_for('searchs.eatery', data=data['eatery']) }}"></a>
+            <p>{{item['saucer_name']}}</p>
+            <p>${{item['price']}}</p>
+            <p>{{item['description']}}</p>
+            </a>
+            </div>
+        {% endfor%}
+        <!-- Agrega más elementos según sea necesario -->
+    </section>
+{% else %}
+<h4 style="text-align: center; margin-top: 15rem;margin-bottom: 5rem;">Resultados</h4>
+<section class="container__section" id="results">
+    <div class="container__non">
+    <p>No hay resultados para la busqueda: </p>
+    <p><strong class="menu-item"> {{ searched }}</strong></p>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}
